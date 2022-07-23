@@ -8,14 +8,14 @@ import kotlin.reflect.KClass
 
 @Target(AnnotationTarget.FIELD)
 @Retention(AnnotationRetention.RUNTIME)
-@Constraint(validatedBy = [BooleanAnswer::class])
+@Constraint(validatedBy = [BooleanAnswerConstraint::class])
 annotation class BooleanList(
     val message: String = "The values must be 1 or 0",
     val groups: Array<KClass<out String>> = [],
     val payload: Array<KClass<out Payload>> = []
 )
 
-class BooleanAnswer : ConstraintValidator<BooleanList, List<Int>> {
+class BooleanAnswerConstraint : ConstraintValidator<BooleanList, List<Int>> {
 
     override fun isValid(value: List<Int>, context: ConstraintValidatorContext?): Boolean {
        return value.all { it == 0 || it == 1 }
