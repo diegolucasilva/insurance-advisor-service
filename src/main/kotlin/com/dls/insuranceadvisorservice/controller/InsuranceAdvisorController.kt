@@ -1,5 +1,9 @@
 package com.dls.insuranceadvisorservice.controller
 
+import com.dls.insuranceadvisorservice.controller.dto.RiskProfileResponse
+import com.dls.insuranceadvisorservice.controller.dto.UserProfileRequest
+import com.dls.insuranceadvisorservice.controller.dto.toDomain
+import com.dls.insuranceadvisorservice.controller.dto.toResponse
 import com.dls.insuranceadvisorservice.controller.dto.*
 import org.springframework.http.HttpStatus
 import org.springframework.validation.annotation.Validated
