@@ -11,11 +11,11 @@ import javax.validation.constraints.Size
 
 @JsonNaming(PropertyNamingStrategies.SnakeCaseStrategy::class)
 data class UserProfileRequest(
-    @field:Positive
+    @field:PositiveOrZero
     val age: Int,
     @field:PositiveOrZero
     val dependents: Int,
-    val house: HouseRequest,
+    val house: HouseRequest?,
     @field:PositiveOrZero
     val income: Int,
     val maritalStatus: UserProfile.MaritalStatus,
@@ -23,7 +23,7 @@ data class UserProfileRequest(
     @field:Size(min = 3, max = 3)
     @field:NotNull
     val riskQuestions: List<Int>,
-    val vehicle: VehicleRequest,
+    val vehicle: VehicleRequest?,
     ) {
     data class VehicleRequest(@field:Positive val year: Int)
 
