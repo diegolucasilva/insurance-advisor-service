@@ -7,7 +7,7 @@ import com.dls.insuranceadvisorservice.domain.UserProfile
 class MiddleAgeRule : RiskScoreRule {
 
     override fun execute(userProfile: UserProfile, riskProfileLineInsurance: RiskProfileLineInsurance){
-        if(userProfile.age in 30..40){
+        if(userProfile.age >= 30 && userProfile.age <= 40){
             riskProfileLineInsurance.score-=1;
         }
     }

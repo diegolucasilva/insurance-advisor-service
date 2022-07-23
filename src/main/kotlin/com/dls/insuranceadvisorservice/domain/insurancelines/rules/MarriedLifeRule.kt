@@ -3,20 +3,13 @@ package com.dls.insuranceadvisorservice.domain.insurancelines.rules
 import com.dls.insuranceadvisorservice.domain.insurancelines.RiskScoreRule
 import com.dls.insuranceadvisorservice.domain.RiskProfileLineInsurance
 import com.dls.insuranceadvisorservice.domain.UserProfile
-import java.time.LocalDate
 
-class VehicleProductionDateRule: RiskScoreRule {
+class MarriedLifeRule: RiskScoreRule {
+
 
      override fun execute(userProfile: UserProfile, riskProfileLineInsurance: RiskProfileLineInsurance){
-        if(wasProducedInTheLastFiveYear(userProfile.vehicle?.year)){
+        if(userProfile.maritalStatus == UserProfile.MaritalStatus.married){
             riskProfileLineInsurance.score+=1;
         }
     }
-    private fun wasProducedInTheLastFiveYear(year: Integer?): Boolean{
-        if(year!=null){
-            return (LocalDate.now().year - year.toInt()) <= 5
-        }
-        return false;
-    }
-
 }
