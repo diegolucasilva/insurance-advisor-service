@@ -4,36 +4,32 @@ import com.dls.insuranceadvisorservice.domain.RiskProfileLineInsurance
 import com.dls.insuranceadvisorservice.domain.UserProfile
 import org.junit.jupiter.api.Test
 
+internal class MarriedDisabilityRuleTest {
 
-internal class MinimumIncomeRuleTest {
+    private val rule =MarriedDisabilityRule()
 
-    private val rule =MinimumIncomeRule()
     @Test
-    fun `Given a user without income, this rule must change the final score status to INELIGIBLE`() {
+    fun `Given a user married, this rule must deduct 1 point to the risk score of a line insurance`() {
         //GIVEN
         val actualScore = 2
-        val userProfile = givenUserProfile(0)
+        val userProfile = givenUserProfile(UserProfile.MaritalStatus.married)
         val riskProfileBaseLine = givenARiskProfileBaseLine(actualScore)
         //WHEN
         rule.execute(userProfile,riskProfileBaseLine);
         //THEN
-        assert(riskProfileBaseLine.score ==actualScore)
-        assert(riskProfileBaseLine.finalScoreStatus == RiskProfileLineInsurance.FinalScoreStatus.INELIGIBLE)
-
+        assert(riskProfileBaseLine.score == actualScore-1)
     }
 
     @Test
-    fun `Given a user with income, this rule must keep the final score status to NOTCALCULATED`() {
+    fun `Given a user single, this rule mustn't deduct any point to the risk score of a line insurance`() {
         //GIVEN
         val actualScore = 2
-        val userProfile = givenUserProfile(100001)
+        val userProfile = givenUserProfile(UserProfile.MaritalStatus.single)
         val riskProfileBaseLine = givenARiskProfileBaseLine(actualScore)
         //WHEN
         rule.execute(userProfile,riskProfileBaseLine);
         //THEN
         assert(riskProfileBaseLine.score == actualScore)
-        assert(riskProfileBaseLine.finalScoreStatus == RiskProfileLineInsurance.FinalScoreStatus.NOTCALCULATED)
-
     }
 
     private fun givenARiskProfileBaseLine(actualScore: Int) =
@@ -43,12 +39,12 @@ internal class MinimumIncomeRuleTest {
             finalScoreStatus = RiskProfileLineInsurance.FinalScoreStatus.NOTCALCULATED
         )
 
-    private fun givenUserProfile(income: Int) =
+    private fun givenUserProfile(maritalStatus: UserProfile.MaritalStatus) =
         UserProfile(
             age=30,
             dependents=1,
-            income=income,
-            maritalStatus = UserProfile.MaritalStatus.married,
+            income=10,
+            maritalStatus = maritalStatus,
             house = null,
             questionScore = 2,
             vehicle = null

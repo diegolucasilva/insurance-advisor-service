@@ -4,9 +4,9 @@ import com.dls.insuranceadvisorservice.domain.RiskProfileLineInsurance
 import com.dls.insuranceadvisorservice.domain.UserProfile
 import org.junit.jupiter.api.Test
 
-internal class MarriedRuleTest {
+internal class MarriedLifeRuleTest {
 
-    private val rule =MarriedRule()
+    private val rule =MarriedLifeRule()
 
     @Test
     fun `Given a user married, this rule must add 1 point to the risk score of a line insurance`() {

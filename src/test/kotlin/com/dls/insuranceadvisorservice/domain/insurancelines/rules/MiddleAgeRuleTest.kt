@@ -9,7 +9,6 @@ internal class MiddleAgeRuleTest {
 
     private val dependentsIncomeRule = MiddleAgeRule()
 
-
     @Test
     fun `Given a user between 30 and 40, this rule must deduct 1 point to the risk score of a line insurance`() {
         //GIVEN
