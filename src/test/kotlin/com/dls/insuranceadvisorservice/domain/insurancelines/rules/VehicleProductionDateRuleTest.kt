@@ -1,0 +1,57 @@
+package com.dls.insuranceadvisorservice.domain.insurancelines.rules;
+
+import com.dls.insuranceadvisorservice.domain.RiskProfileLineInsurance
+import com.dls.insuranceadvisorservice.domain.UserProfile
+import org.junit.jupiter.api.Test
+import java.time.LocalDate
+
+internal class VehicleProductionDateRuleTest {
+
+    private val rule =VehicleProductionDateRule()
+
+    @Test
+    fun `Given a user with a vehicle produced in the last 5 years, this rule must add 1 point to the risk score of a line insurance`() {
+        //GIVEN
+        val actualScore = 2
+        val validYear = LocalDate.now().year - 5
+        val userProfile = givenUserProfile(validYear)
+        val riskProfileBaseLine = givenARiskProfileBaseLine(actualScore)
+        //WHEN
+        rule.execute(userProfile,riskProfileBaseLine);
+        //THEN
+        assert(riskProfileBaseLine.score == actualScore+1)
+    }
+
+    @Test
+    fun `Given a user with a vehicle that wasn't produced in the last 5 years, this rule mustn't add any point to the risk score of a line insurance`() {
+        //GIVEN
+        val actualScore = 2
+        val unValidYear = LocalDate.now().year - 8
+        val userProfile = givenUserProfile(unValidYear)
+        val riskProfileBaseLine = givenARiskProfileBaseLine(actualScore)
+        //WHEN
+        rule.execute(userProfile,riskProfileBaseLine);
+        //THEN
+        assert(riskProfileBaseLine.score == actualScore)
+    }
+
+    private fun givenARiskProfileBaseLine(actualScore: Int) =
+        RiskProfileLineInsurance(
+            name=RiskProfileLineInsurance.Name.AUTO,
+            score=actualScore,
+            finalScoreStatus = RiskProfileLineInsurance.FinalScoreStatus.NOTCALCULATED
+        )
+
+    private fun givenUserProfile(year: Int) =
+        UserProfile(
+            age=30,
+            dependents=1,
+            income=10,
+            maritalStatus = UserProfile.MaritalStatus.married,
+            house = null,
+            questionScore = 2,
+            vehicle = UserProfile.Vehicle(year)
+        )
+
+
+}
