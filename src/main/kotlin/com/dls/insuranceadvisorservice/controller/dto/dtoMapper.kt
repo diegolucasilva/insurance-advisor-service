@@ -1,6 +1,6 @@
 package com.dls.insuranceadvisorservice.controller.dto
 
-import com.dls.insuranceadvisorservice.domain.RiskProfile
+import com.dls.insuranceadvisorservice.domain.RiskProfileLineInsurance
 import com.dls.insuranceadvisorservice.domain.UserProfile
 
 
@@ -22,9 +22,9 @@ fun UserProfileRequest.VehicleRequest.toDomain() = UserProfile.Vehicle(
         year = year
         )
 
-fun List<RiskProfile>.toResponse() = RiskProfileResponse(
-        auto = this.first { it.insuranceLine ==RiskProfile.InsuranceLine.AUTO }.finalScoreStatus.name.lowercase(),
-        disability = this.first { it.insuranceLine ==RiskProfile.InsuranceLine.DISABILITY}.finalScoreStatus.name.lowercase(),
+fun List<RiskProfileLineInsurance>.toResponse() = RiskProfileResponse(
+        auto = this.first { it.name ==RiskProfileLineInsurance.Name.AUTO }.finalScoreStatus.name.lowercase(),
+        disability = this.first { it.name ==RiskProfileLineInsurance.Name.DISABILITY}.finalScoreStatus.name.lowercase(),
         home =  " ",
         life =" "
         )
