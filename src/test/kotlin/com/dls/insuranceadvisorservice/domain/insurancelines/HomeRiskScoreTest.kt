@@ -28,23 +28,6 @@ class HomeRiskScoreTest {
         assert(riskProfileLineInsurance.finalScoreStatus == RiskProfileLineInsurance.FinalScoreStatus.INELIGIBLE)
     }
 
-    @Test
-    fun `Given a user that is under 60 years old, the auto insurance risk calculator should return the score status INELIGIBLE`() {
-        //GIVEN
-        val userProfile = UserProfile(
-            age=89,
-            dependents=5,
-            income=0,
-            maritalStatus = UserProfile.MaritalStatus.married,
-            house = UserProfile.House(UserProfile.OwnershipStatus.owned),
-            questionScore = 2,
-            vehicle = null
-        )
-        //WHEN
-        val riskProfileLineInsurance = homeInsuranceRiskScore.execute(userProfile)
-        //THEN
-        assert(riskProfileLineInsurance.finalScoreStatus == RiskProfileLineInsurance.FinalScoreStatus.INELIGIBLE)
-    }
 
     //User is under 30 years old, deduct 2 risk points from all lines of insurance.
     @Test
