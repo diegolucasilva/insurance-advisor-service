@@ -12,7 +12,7 @@ class VehicleProductionDateRule: RiskScoreRule {
             riskProfileLineInsurance.score+=1;
         }
     }
-    private fun wasProducedInTheLastFiveYear(year: Integer?): Boolean{
+    private fun wasProducedInTheLastFiveYear(year: Int?): Boolean{
         if(year!=null){
             return (LocalDate.now().year - year.toInt()) <= 5
         }

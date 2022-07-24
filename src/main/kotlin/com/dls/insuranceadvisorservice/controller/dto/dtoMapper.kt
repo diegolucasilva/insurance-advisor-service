@@ -5,9 +5,9 @@ import com.dls.insuranceadvisorservice.domain.UserProfile
 
 
 fun UserProfileRequest.toDomain() = UserProfile(
-        age = age,
-        dependents = dependents,
-        income = income,
+        age = age.toInt(),
+        dependents = dependents.toInt(),
+        income = income.toInt(),
         maritalStatus = maritalStatus,
         questionScore = riskQuestions.sum(),
         house = (house?.toDomain()),
@@ -19,7 +19,7 @@ fun UserProfileRequest.HouseRequest.toDomain() = UserProfile.House(
         )
 
 fun UserProfileRequest.VehicleRequest.toDomain() = UserProfile.Vehicle(
-        year = year
+        year = year.toInt()
         )
 
 fun List<RiskProfileLineInsurance>.toResponse() = RiskProfileResponse(
