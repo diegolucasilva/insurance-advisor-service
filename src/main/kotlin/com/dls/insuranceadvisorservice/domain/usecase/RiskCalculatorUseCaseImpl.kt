@@ -5,6 +5,7 @@ import com.dls.insuranceadvisorservice.domain.insurancelines.AutoInsuranceRiskSc
 import com.dls.insuranceadvisorservice.domain.RiskProfileLineInsurance
 import com.dls.insuranceadvisorservice.domain.UserProfile
 import com.dls.insuranceadvisorservice.domain.insurancelines.DisabilityInsuranceRiskScore
+import com.dls.insuranceadvisorservice.domain.insurancelines.HomeRiskScore
 
 import org.springframework.stereotype.Service
 
@@ -18,6 +19,6 @@ class RiskCalculatorUseCaseImpl: RiskCalculatorUseCase {
     }
 
     private fun getLineRiskCalculators():List<LineOfInsuranceRiskScoreCalculator>{
-        return listOf(AutoInsuranceRiskScore(), DisabilityInsuranceRiskScore())
+        return listOf(AutoInsuranceRiskScore(), DisabilityInsuranceRiskScore(), HomeRiskScore())
     }
 }

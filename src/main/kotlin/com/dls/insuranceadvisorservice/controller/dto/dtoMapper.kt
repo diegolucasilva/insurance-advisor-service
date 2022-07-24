@@ -25,7 +25,7 @@ fun UserProfileRequest.VehicleRequest.toDomain() = UserProfile.Vehicle(
 fun List<RiskProfileLineInsurance>.toResponse() = RiskProfileResponse(
         auto = this.first { it.name ==RiskProfileLineInsurance.Name.AUTO }.finalScoreStatus.name.lowercase(),
         disability = this.first { it.name ==RiskProfileLineInsurance.Name.DISABILITY}.finalScoreStatus.name.lowercase(),
-        home =  " ",
+        home =  this.first { it.name ==RiskProfileLineInsurance.Name.HOME}.finalScoreStatus.name.lowercase(),
         life =" "
         )
 
