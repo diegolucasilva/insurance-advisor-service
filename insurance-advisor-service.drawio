@@ -1,1 +1,265 @@
-<mxfile host="app.diagrams.net" modified="2022-07-25T02:52:24.769Z" agent="5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/103.0.0.0 Safari/537.36" etag="6S0RY25M5BednMJP75hl" version="20.0.4" type="google"><diagram id="SVKXSChUIAAmM2R3LEYZ" name="Page-1">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</diagram></mxfile>
+<mxfile host="app.diagrams.net" modified="2022-07-25T16:04:47.561Z" agent="5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/103.0.0.0 Safari/537.36" etag="an7auOF7yfgqXVD_WJZ7" version="20.2.0" type="github">
+  <diagram id="SVKXSChUIAAmM2R3LEYZ" name="Page-1">
+    <mxGraphModel dx="2196" dy="1666" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="6InDdCLGvUVwwbw9M51u-63" value="" style="group" parent="1" connectable="0" vertex="1">
+          <mxGeometry x="-70" y="-20" width="870" height="390" as="geometry" />
+        </mxCell>
+        <mxCell id="6InDdCLGvUVwwbw9M51u-48" value="" style="shape=folder;fontStyle=1;spacingTop=10;tabWidth=40;tabHeight=14;tabPosition=left;html=1;" parent="6InDdCLGvUVwwbw9M51u-63" vertex="1">
+          <mxGeometry width="870" height="390" as="geometry" />
+        </mxCell>
+        <mxCell id="6InDdCLGvUVwwbw9M51u-49" value="adapter" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" parent="6InDdCLGvUVwwbw9M51u-63" vertex="1">
+          <mxGeometry y="20" width="60" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="dkyOJv_qx5CS_OgZHiO7-1" value="InsuranceAdvisorController" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;" parent="6InDdCLGvUVwwbw9M51u-63" vertex="1">
+          <mxGeometry x="290" y="60" width="320" height="86" as="geometry">
+            <mxRectangle x="220" y="40" width="200" height="30" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="dkyOJv_qx5CS_OgZHiO7-2" value="+ riskCalculator: RiskCalculatorUseCase" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" parent="dkyOJv_qx5CS_OgZHiO7-1" vertex="1">
+          <mxGeometry y="26" width="320" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="dkyOJv_qx5CS_OgZHiO7-3" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;" parent="dkyOJv_qx5CS_OgZHiO7-1" vertex="1">
+          <mxGeometry y="52" width="320" height="8" as="geometry" />
+        </mxCell>
+        <mxCell id="dkyOJv_qx5CS_OgZHiO7-4" value="+ createRiskProfile(request): RiskProfileResponse" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" parent="dkyOJv_qx5CS_OgZHiO7-1" vertex="1">
+          <mxGeometry y="60" width="320" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="dkyOJv_qx5CS_OgZHiO7-5" value="" style="endArrow=open;endFill=1;endSize=12;html=1;rounded=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="6InDdCLGvUVwwbw9M51u-63" source="dkyOJv_qx5CS_OgZHiO7-4" target="dkyOJv_qx5CS_OgZHiO7-10" edge="1">
+          <mxGeometry width="160" relative="1" as="geometry">
+            <mxPoint x="270" y="260" as="sourcePoint" />
+            <mxPoint x="450" y="250" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="dkyOJv_qx5CS_OgZHiO7-10" value="&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;&quot;&gt;&lt;i&gt;&amp;lt;&amp;lt;Interface&amp;gt;&amp;gt;&lt;/i&gt;&lt;br&gt;&lt;b&gt;RiskScoreProcessorUseCase&lt;/b&gt;&lt;br&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot;&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ execute(userRiskProfile): List&amp;lt;RiskProfileLineInsurance&amp;gt;&lt;br&gt;&lt;br&gt;&lt;/p&gt;" style="verticalAlign=top;align=left;overflow=fill;fontSize=12;fontFamily=Helvetica;html=1;" parent="6InDdCLGvUVwwbw9M51u-63" vertex="1">
+          <mxGeometry x="290" y="250" width="320" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="6InDdCLGvUVwwbw9M51u-52" value="ExceptionHandler" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;" parent="6InDdCLGvUVwwbw9M51u-63" vertex="1">
+          <mxGeometry x="20" y="73" width="220" height="60" as="geometry">
+            <mxRectangle x="220" y="40" width="200" height="30" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="6InDdCLGvUVwwbw9M51u-54" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;" parent="6InDdCLGvUVwwbw9M51u-52" vertex="1">
+          <mxGeometry y="26" width="220" height="8" as="geometry" />
+        </mxCell>
+        <mxCell id="6InDdCLGvUVwwbw9M51u-55" value="+ + handleException(ex: Throwable)" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" parent="6InDdCLGvUVwwbw9M51u-52" vertex="1">
+          <mxGeometry y="34" width="220" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="6InDdCLGvUVwwbw9M51u-56" value="ErrorResponse" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;" parent="6InDdCLGvUVwwbw9M51u-63" vertex="1">
+          <mxGeometry x="20" y="173" width="220" height="34" as="geometry">
+            <mxRectangle x="220" y="40" width="200" height="30" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="6InDdCLGvUVwwbw9M51u-57" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;" parent="6InDdCLGvUVwwbw9M51u-56" vertex="1">
+          <mxGeometry y="26" width="220" height="8" as="geometry" />
+        </mxCell>
+        <mxCell id="6InDdCLGvUVwwbw9M51u-59" value="BooleanAnswerConstraint" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;" parent="6InDdCLGvUVwwbw9M51u-63" vertex="1">
+          <mxGeometry x="640" y="113" width="220" height="60" as="geometry">
+            <mxRectangle x="220" y="40" width="200" height="30" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="6InDdCLGvUVwwbw9M51u-60" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;" parent="6InDdCLGvUVwwbw9M51u-59" vertex="1">
+          <mxGeometry y="26" width="220" height="8" as="geometry" />
+        </mxCell>
+        <mxCell id="6InDdCLGvUVwwbw9M51u-61" value="+ isValid()" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" parent="6InDdCLGvUVwwbw9M51u-59" vertex="1">
+          <mxGeometry y="34" width="220" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="6InDdCLGvUVwwbw9M51u-86" value="" style="shape=folder;fontStyle=1;spacingTop=10;tabWidth=40;tabHeight=14;tabPosition=left;html=1;" parent="1" vertex="1">
+          <mxGeometry x="-510" y="470" width="1870" height="1330" as="geometry" />
+        </mxCell>
+        <mxCell id="6InDdCLGvUVwwbw9M51u-9" value="" style="endArrow=open;endFill=1;endSize=12;html=1;rounded=0;" parent="1" source="6InDdCLGvUVwwbw9M51u-7" edge="1">
+          <mxGeometry width="160" relative="1" as="geometry">
+            <mxPoint x="340" y="820" as="sourcePoint" />
+            <mxPoint x="380" y="860" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="6InDdCLGvUVwwbw9M51u-10" value="&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;&quot;&gt;&lt;i&gt;&amp;lt;&amp;lt;Interface&amp;gt;&amp;gt;&lt;/i&gt;&lt;br&gt;&lt;b&gt;LineOfInsuranceRiskScoreCalculator&lt;/b&gt;&lt;br&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot;&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+execute(userRiskProfile: UserRiskProfile): RiskProfileLineInsurance&lt;/p&gt;" style="verticalAlign=top;align=left;overflow=fill;fontSize=12;fontFamily=Helvetica;html=1;" parent="1" vertex="1">
+          <mxGeometry x="160" y="860" width="470" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="6InDdCLGvUVwwbw9M51u-11" value="" style="endArrow=block;dashed=1;endFill=0;endSize=12;html=1;rounded=0;entryX=0.453;entryY=0.985;entryDx=0;entryDy=0;entryPerimeter=0;exitX=0.466;exitY=0;exitDx=0;exitDy=0;exitPerimeter=0;" parent="1" source="6InDdCLGvUVwwbw9M51u-12" target="6InDdCLGvUVwwbw9M51u-10" edge="1">
+          <mxGeometry width="160" relative="1" as="geometry">
+            <mxPoint x="120" y="1110" as="sourcePoint" />
+            <mxPoint x="280" y="1110" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="6InDdCLGvUVwwbw9M51u-12" value="AutoInsuranceRiskScore" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;" parent="1" vertex="1">
+          <mxGeometry x="-30" y="1060" width="390" height="110" as="geometry">
+            <mxRectangle x="220" y="40" width="200" height="30" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="6InDdCLGvUVwwbw9M51u-14" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;" parent="6InDdCLGvUVwwbw9M51u-12" vertex="1">
+          <mxGeometry y="26" width="390" height="8" as="geometry" />
+        </mxCell>
+        <mxCell id="6InDdCLGvUVwwbw9M51u-15" value="+ execute(userRiskProfile: UserRiskProfile): RiskProfileLineInsurance&#xa;- getRules():List&lt;RiskScoreRule&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" parent="6InDdCLGvUVwwbw9M51u-12" vertex="1">
+          <mxGeometry y="34" width="390" height="76" as="geometry" />
+        </mxCell>
+        <mxCell id="6InDdCLGvUVwwbw9M51u-16" value="DisabilityInsuranceRiskScore" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;" parent="1" vertex="1">
+          <mxGeometry x="380" y="1060" width="390" height="110" as="geometry">
+            <mxRectangle x="220" y="40" width="200" height="30" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="6InDdCLGvUVwwbw9M51u-17" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;" parent="6InDdCLGvUVwwbw9M51u-16" vertex="1">
+          <mxGeometry y="26" width="390" height="8" as="geometry" />
+        </mxCell>
+        <mxCell id="6InDdCLGvUVwwbw9M51u-18" value="+ execute(userRiskProfile: UserRiskProfile): RiskProfileLineInsurance&#xa;- getRules():List&lt;RiskScoreRule&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" parent="6InDdCLGvUVwwbw9M51u-16" vertex="1">
+          <mxGeometry y="34" width="390" height="76" as="geometry" />
+        </mxCell>
+        <mxCell id="6InDdCLGvUVwwbw9M51u-19" value="" style="endArrow=block;dashed=1;endFill=0;endSize=12;html=1;rounded=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;exitX=0.486;exitY=-0.014;exitDx=0;exitDy=0;exitPerimeter=0;" parent="1" source="6InDdCLGvUVwwbw9M51u-16" target="6InDdCLGvUVwwbw9M51u-10" edge="1">
+          <mxGeometry width="160" relative="1" as="geometry">
+            <mxPoint x="161.74000000000024" y="1070" as="sourcePoint" />
+            <mxPoint x="224.05000000000018" y="970.7" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="6InDdCLGvUVwwbw9M51u-20" value="HomeInsuranceRiskScore" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;" parent="1" vertex="1">
+          <mxGeometry x="-440" y="1060" width="390" height="110" as="geometry">
+            <mxRectangle x="220" y="40" width="200" height="30" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="6InDdCLGvUVwwbw9M51u-21" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;" parent="6InDdCLGvUVwwbw9M51u-20" vertex="1">
+          <mxGeometry y="26" width="390" height="8" as="geometry" />
+        </mxCell>
+        <mxCell id="6InDdCLGvUVwwbw9M51u-22" value="+ execute(userRiskProfile: UserRiskProfile): RiskProfileLineInsurance&#xa;- getRules():List&lt;RiskScoreRule&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" parent="6InDdCLGvUVwwbw9M51u-20" vertex="1">
+          <mxGeometry y="34" width="390" height="76" as="geometry" />
+        </mxCell>
+        <mxCell id="6InDdCLGvUVwwbw9M51u-23" value="" style="endArrow=block;dashed=1;endFill=0;endSize=12;html=1;rounded=0;entryX=0.103;entryY=0.999;entryDx=0;entryDy=0;entryPerimeter=0;exitX=0.5;exitY=0;exitDx=0;exitDy=0;" parent="1" source="6InDdCLGvUVwwbw9M51u-20" target="6InDdCLGvUVwwbw9M51u-10" edge="1">
+          <mxGeometry width="160" relative="1" as="geometry">
+            <mxPoint x="161.73999999999978" y="1070" as="sourcePoint" />
+            <mxPoint x="382.9100000000003" y="968.4999999999998" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="6InDdCLGvUVwwbw9M51u-24" value="DisabilityInsuranceRiskScore" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;" parent="1" vertex="1">
+          <mxGeometry x="790" y="1060" width="390" height="110" as="geometry">
+            <mxRectangle x="220" y="40" width="200" height="30" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="6InDdCLGvUVwwbw9M51u-25" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;" parent="6InDdCLGvUVwwbw9M51u-24" vertex="1">
+          <mxGeometry y="26" width="390" height="8" as="geometry" />
+        </mxCell>
+        <mxCell id="6InDdCLGvUVwwbw9M51u-26" value="+ execute(userRiskProfile: UserRiskProfile): RiskProfileLineInsurance&#xa;- getRules():List&lt;RiskScoreRule&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" parent="6InDdCLGvUVwwbw9M51u-24" vertex="1">
+          <mxGeometry y="34" width="390" height="76" as="geometry" />
+        </mxCell>
+        <mxCell id="6InDdCLGvUVwwbw9M51u-27" value="" style="endArrow=block;dashed=1;endFill=0;endSize=12;html=1;rounded=0;exitX=0.5;exitY=0;exitDx=0;exitDy=0;" parent="1" source="6InDdCLGvUVwwbw9M51u-24" target="6InDdCLGvUVwwbw9M51u-10" edge="1">
+          <mxGeometry width="160" relative="1" as="geometry">
+            <mxPoint x="579.54" y="1068.46" as="sourcePoint" />
+            <mxPoint x="405" y="970" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="6InDdCLGvUVwwbw9M51u-31" value="" style="endArrow=open;endFill=1;endSize=12;html=1;rounded=0;exitX=0.474;exitY=1.038;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0.15;entryY=-0.026;entryDx=0;entryDy=0;entryPerimeter=0;" parent="1" source="6InDdCLGvUVwwbw9M51u-22" target="6InDdCLGvUVwwbw9M51u-35" edge="1">
+          <mxGeometry width="160" relative="1" as="geometry">
+            <mxPoint x="-90" y="1290" as="sourcePoint" />
+            <mxPoint x="269.7861385815463" y="1360" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="6InDdCLGvUVwwbw9M51u-32" value="" style="endArrow=open;endFill=1;endSize=12;html=1;rounded=0;entryX=0.447;entryY=0;entryDx=0;entryDy=0;exitX=0.445;exitY=1.007;exitDx=0;exitDy=0;exitPerimeter=0;entryPerimeter=0;" parent="1" source="6InDdCLGvUVwwbw9M51u-15" target="6InDdCLGvUVwwbw9M51u-35" edge="1">
+          <mxGeometry width="160" relative="1" as="geometry">
+            <mxPoint x="-245.13999999999987" y="1182.8880000000001" as="sourcePoint" />
+            <mxPoint x="400.82000000000016" y="1359.072" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="6InDdCLGvUVwwbw9M51u-33" value="" style="endArrow=open;endFill=1;endSize=12;html=1;rounded=0;entryX=0.581;entryY=0.005;entryDx=0;entryDy=0;entryPerimeter=0;" parent="1" source="6InDdCLGvUVwwbw9M51u-18" target="6InDdCLGvUVwwbw9M51u-35" edge="1">
+          <mxGeometry width="160" relative="1" as="geometry">
+            <mxPoint x="153.55000000000018" y="1180.532" as="sourcePoint" />
+            <mxPoint x="461.3986013986014" y="1360" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="6InDdCLGvUVwwbw9M51u-34" value="" style="endArrow=open;endFill=1;endSize=12;html=1;rounded=0;exitX=0.515;exitY=0.988;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0.796;entryY=-0.021;entryDx=0;entryDy=0;entryPerimeter=0;" parent="1" source="6InDdCLGvUVwwbw9M51u-26" target="6InDdCLGvUVwwbw9M51u-35" edge="1">
+          <mxGeometry width="160" relative="1" as="geometry">
+            <mxPoint x="163.55000000000018" y="1190.532" as="sourcePoint" />
+            <mxPoint x="562.6034100404968" y="1360" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="6InDdCLGvUVwwbw9M51u-35" value="&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;&quot;&gt;&lt;i&gt;&amp;lt;&amp;lt;Interface&amp;gt;&amp;gt;&lt;/i&gt;&lt;br&gt;&lt;b&gt;LineOfInsuranceRiskScoreCalculator&lt;/b&gt;&lt;br&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot;&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+execute(userRiskProfile: UserRiskProfile, riskProfileLineInsurance: RiskProfileLineInsurance)&lt;/p&gt;" style="verticalAlign=top;align=left;overflow=fill;fontSize=12;fontFamily=Helvetica;html=1;" parent="1" vertex="1">
+          <mxGeometry x="170" y="1360" width="510" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="6InDdCLGvUVwwbw9M51u-39" value="" style="endArrow=block;dashed=1;endFill=0;endSize=12;html=1;rounded=0;entryX=0.25;entryY=1;entryDx=0;entryDy=0;exitX=0.5;exitY=0;exitDx=0;exitDy=0;" parent="1" source="6InDdCLGvUVwwbw9M51u-36" target="6InDdCLGvUVwwbw9M51u-35" edge="1">
+          <mxGeometry width="160" relative="1" as="geometry">
+            <mxPoint x="161.73999999999978" y="1070" as="sourcePoint" />
+            <mxPoint x="382.90999999999985" y="968.5" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="6InDdCLGvUVwwbw9M51u-43" value="" style="endArrow=block;dashed=1;endFill=0;endSize=12;html=1;rounded=0;entryX=0.688;entryY=1.01;entryDx=0;entryDy=0;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryPerimeter=0;" parent="1" source="6InDdCLGvUVwwbw9M51u-40" target="6InDdCLGvUVwwbw9M51u-35" edge="1">
+          <mxGeometry width="160" relative="1" as="geometry">
+            <mxPoint x="195" y="1580" as="sourcePoint" />
+            <mxPoint x="307.5" y="1470" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="6InDdCLGvUVwwbw9M51u-44" value="RiskProfileLineInsurance" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;" parent="1" vertex="1">
+          <mxGeometry x="1050" y="840" width="190" height="110" as="geometry">
+            <mxRectangle x="220" y="40" width="200" height="30" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="6InDdCLGvUVwwbw9M51u-45" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;" parent="6InDdCLGvUVwwbw9M51u-44" vertex="1">
+          <mxGeometry y="26" width="190" height="8" as="geometry" />
+        </mxCell>
+        <mxCell id="6InDdCLGvUVwwbw9M51u-46" value="+ calculatePlanBasedOnScore()&#xa;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" parent="6InDdCLGvUVwwbw9M51u-44" vertex="1">
+          <mxGeometry y="34" width="190" height="76" as="geometry" />
+        </mxCell>
+        <mxCell id="6InDdCLGvUVwwbw9M51u-47" value="" style="endArrow=open;endFill=1;endSize=12;html=1;rounded=0;" parent="1" source="6InDdCLGvUVwwbw9M51u-10" target="6InDdCLGvUVwwbw9M51u-46" edge="1">
+          <mxGeometry width="160" relative="1" as="geometry">
+            <mxPoint x="680" y="870" as="sourcePoint" />
+            <mxPoint x="840" y="870" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="6InDdCLGvUVwwbw9M51u-89" value="domain" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" parent="1" vertex="1">
+          <mxGeometry x="-510" y="480" width="60" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="6InDdCLGvUVwwbw9M51u-2" value="" style="endArrow=block;dashed=1;endFill=0;endSize=12;html=1;rounded=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;exitX=0.5;exitY=0;exitDx=0;exitDy=0;" parent="1" source="6InDdCLGvUVwwbw9M51u-4" target="dkyOJv_qx5CS_OgZHiO7-10" edge="1">
+          <mxGeometry width="160" relative="1" as="geometry">
+            <mxPoint x="380" y="430" as="sourcePoint" />
+            <mxPoint x="370" y="420" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="6InDdCLGvUVwwbw9M51u-93" value="" style="shape=folder;fontStyle=1;spacingTop=10;tabWidth=40;tabHeight=14;tabPosition=left;html=1;" parent="1" vertex="1">
+          <mxGeometry x="100" y="500" width="550" height="240" as="geometry" />
+        </mxCell>
+        <mxCell id="6InDdCLGvUVwwbw9M51u-4" value="RiskScoreProcessorUseCaseImpl" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;" parent="1" vertex="1">
+          <mxGeometry x="145" y="570" width="470" height="120" as="geometry">
+            <mxRectangle x="220" y="40" width="200" height="30" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="6InDdCLGvUVwwbw9M51u-5" value="+ riskCalculator: RiskCalculatorUseCase" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" parent="6InDdCLGvUVwwbw9M51u-4" vertex="1">
+          <mxGeometry y="26" width="470" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="6InDdCLGvUVwwbw9M51u-6" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;" parent="6InDdCLGvUVwwbw9M51u-4" vertex="1">
+          <mxGeometry y="52" width="470" height="8" as="geometry" />
+        </mxCell>
+        <mxCell id="6InDdCLGvUVwwbw9M51u-7" value="+ execute(userRiskProfile): List&lt;RiskProfileLineInsurance&gt;&#xa;- getLineRiskCalculators():  List&lt;LineOfInsuranceRiskScoreCalculator&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" parent="6InDdCLGvUVwwbw9M51u-4" vertex="1">
+          <mxGeometry y="60" width="470" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="6InDdCLGvUVwwbw9M51u-95" value="usecase" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" parent="1" vertex="1">
+          <mxGeometry x="100" y="510" width="70" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="6InDdCLGvUVwwbw9M51u-96" value="" style="shape=folder;fontStyle=1;spacingTop=10;tabWidth=40;tabHeight=14;tabPosition=left;html=1;" parent="1" vertex="1">
+          <mxGeometry x="-100" y="1530" width="1150" height="210" as="geometry" />
+        </mxCell>
+        <mxCell id="6InDdCLGvUVwwbw9M51u-40" value="VehicleProductionDateRule" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;" parent="1" vertex="1">
+          <mxGeometry x="470" y="1570" width="510" height="110" as="geometry">
+            <mxRectangle x="220" y="40" width="200" height="30" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="6InDdCLGvUVwwbw9M51u-41" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;" parent="6InDdCLGvUVwwbw9M51u-40" vertex="1">
+          <mxGeometry y="26" width="510" height="8" as="geometry" />
+        </mxCell>
+        <mxCell id="6InDdCLGvUVwwbw9M51u-42" value="+execute(userRiskProfile: UserRiskProfile, riskProfileLineInsurance: RiskProfileLineInsurance)" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" parent="6InDdCLGvUVwwbw9M51u-40" vertex="1">
+          <mxGeometry y="34" width="510" height="76" as="geometry" />
+        </mxCell>
+        <mxCell id="6InDdCLGvUVwwbw9M51u-36" value="DependentsIncomeRule" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;" parent="1" vertex="1">
+          <mxGeometry x="-70" y="1570" width="510" height="110" as="geometry">
+            <mxRectangle x="220" y="40" width="200" height="30" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="6InDdCLGvUVwwbw9M51u-37" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;" parent="6InDdCLGvUVwwbw9M51u-36" vertex="1">
+          <mxGeometry y="26" width="510" height="8" as="geometry" />
+        </mxCell>
+        <mxCell id="6InDdCLGvUVwwbw9M51u-38" value="+execute(userRiskProfile: UserRiskProfile, riskProfileLineInsurance: RiskProfileLineInsurance)" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" parent="6InDdCLGvUVwwbw9M51u-36" vertex="1">
+          <mxGeometry y="34" width="510" height="76" as="geometry" />
+        </mxCell>
+        <mxCell id="6InDdCLGvUVwwbw9M51u-97" value="rules" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
+          <mxGeometry x="-100" y="1540" width="60" height="30" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
