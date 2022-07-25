@@ -1,6 +1,6 @@
 package com.dls.insuranceadvisorservice.domain.usecase
 
-import com.dls.insuranceadvisorservice.adapter.controller.RiskScoreCalculatorUseCase
+import com.dls.insuranceadvisorservice.adapter.controller.RiskScoreProcessorUseCase
 import com.dls.insuranceadvisorservice.domain.insurancelines.AutoInsuranceRiskScore
 import com.dls.insuranceadvisorservice.domain.RiskProfileLineInsurance
 import com.dls.insuranceadvisorservice.domain.UserRiskProfile
@@ -11,7 +11,7 @@ import com.dls.insuranceadvisorservice.domain.insurancelines.LifeInsuranceRiskSc
 import org.springframework.stereotype.Service
 
 @Service
-class RiskScoreCalculatorUseCaseImpl: RiskScoreCalculatorUseCase {
+class RiskScoreProcessorUseCaseImpl: RiskScoreProcessorUseCase {
 
     override fun execute(userRiskProfile: UserRiskProfile): List<RiskProfileLineInsurance>{
         return getLineRiskCalculators().map {

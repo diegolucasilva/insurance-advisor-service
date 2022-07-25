@@ -20,7 +20,7 @@ class HomeInsuranceRiskScore: LineOfInsuranceRiskScoreCalculator {
 
     }
 
-    private fun getRules():List<RiskScoreRule>{
+    override fun getRules():List<RiskScoreRule>{
         return listOf(
             HouseRule(),
             UnderThirtyAgeRule(),

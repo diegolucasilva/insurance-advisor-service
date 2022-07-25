@@ -17,10 +17,9 @@ class AutoInsuranceRiskScore: LineOfInsuranceRiskScoreCalculator {
         }
         riskProfileBaseLine.calculateProfileBasedScore();
         return riskProfileBaseLine
-
     }
 
-    private fun getRules():List<RiskScoreRule>{
+    override fun getRules():List<RiskScoreRule>{
         return listOf(
             VehicleRule(),
             UnderThirtyAgeRule(),

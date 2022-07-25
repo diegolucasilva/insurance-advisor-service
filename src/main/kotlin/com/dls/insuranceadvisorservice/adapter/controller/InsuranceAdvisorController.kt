@@ -15,13 +15,13 @@ import javax.validation.Valid
 
 @Validated
 @RestController
-class InsuranceAdvisorController(val riskScoreCalculatorUseCase: RiskScoreCalculatorUseCase) {
+class InsuranceAdvisorController(val riskScoreProcessorUseCase: RiskScoreProcessorUseCase) {
 
     @PostMapping("/insurance/advisor")
     @ResponseStatus(HttpStatus.CREATED)
     fun createRiskProfile(@Valid @RequestBody userPersonalInformationRequest: UserPersonalInformationRequest): RiskProfileResponse? {
          val customerProfile = userPersonalInformationRequest.toDomain()
-         return riskScoreCalculatorUseCase.execute(customerProfile).toResponse()
+         return riskScoreProcessorUseCase.execute(customerProfile).toResponse()
     }
 
 }
