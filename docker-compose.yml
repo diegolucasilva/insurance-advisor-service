@@ -1,0 +1,6 @@
+services:
+  insurance-advisor-service:
+    container_name: insurance-advisor-service
+    build: .
+    ports:
+      - "8080:8080"
