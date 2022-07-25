@@ -1,7 +1,7 @@
 package com.dls.insuranceadvisorservice.domain.insurancelines.rules;
 
 import com.dls.insuranceadvisorservice.domain.RiskProfileLineInsurance
-import com.dls.insuranceadvisorservice.domain.UserProfile
+import com.dls.insuranceadvisorservice.domain.UserRiskProfile
 import org.junit.jupiter.api.Test
 
 
@@ -26,10 +26,10 @@ internal class HouseRuleTest {
     fun `Given a user with a house,this rule must keep the final score status to NOTCALCULATED`() {
         //GIVEN
         val actualScore = 2
-        val userProfile = givenUserProfile(UserProfile.House(UserProfile.OwnershipStatus.mortgaged))
+        val userRiskProfile = givenUserProfile(UserRiskProfile.House(UserRiskProfile.OwnershipStatus.mortgaged))
         val riskProfileBaseLine = givenARiskProfileBaseLine(actualScore)
         //WHEN
-        rule.execute(userProfile,riskProfileBaseLine);
+        rule.execute(userRiskProfile,riskProfileBaseLine);
         //THEN
         assert(riskProfileBaseLine.score == actualScore)
         assert(riskProfileBaseLine.finalScoreStatus == RiskProfileLineInsurance.FinalScoreStatus.NOTCALCULATED)
@@ -42,12 +42,12 @@ internal class HouseRuleTest {
             finalScoreStatus = RiskProfileLineInsurance.FinalScoreStatus.NOTCALCULATED
         )
 
-    private fun givenUserProfile(house: UserProfile.House?=null) =
-        UserProfile(
+    private fun givenUserProfile(house: UserRiskProfile.House?=null) =
+        UserRiskProfile(
             age=30,
             dependents=1,
             income=10,
-            maritalStatus = UserProfile.MaritalStatus.married,
+            maritalStatus = UserRiskProfile.MaritalStatus.married,
             house = house,
             questionScore = 2,
             vehicle = null

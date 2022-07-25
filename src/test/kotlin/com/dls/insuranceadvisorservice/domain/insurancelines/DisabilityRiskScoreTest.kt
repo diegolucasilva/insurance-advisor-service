@@ -1,7 +1,7 @@
 package com.dls.insuranceadvisorservice.domain.insurancelines;
 
 import com.dls.insuranceadvisorservice.domain.RiskProfileLineInsurance
-import com.dls.insuranceadvisorservice.domain.UserProfile
+import com.dls.insuranceadvisorservice.domain.UserRiskProfile
 import org.junit.jupiter.api.Test
 import java.time.LocalDate
 
@@ -13,17 +13,17 @@ class DisabilityRiskScoreTest {
     @Test
     fun `Given a user that doesn't have a income, the auto insurance risk calculator should return the score status INELIGIBLE`() {
         //GIVEN
-        val userProfile = UserProfile(
+        val userRiskProfile = UserRiskProfile(
             age=30,
             dependents=1,
             income=0,
-            maritalStatus = UserProfile.MaritalStatus.married,
+            maritalStatus = UserRiskProfile.MaritalStatus.married,
             house = null,
             questionScore = 2,
             vehicle = null
         )
         //WHEN
-        val riskProfileLineInsurance = disabilityInsuranceRiskScore.execute(userProfile)
+        val riskProfileLineInsurance = disabilityInsuranceRiskScore.execute(userRiskProfile)
         //THEN
         assert(riskProfileLineInsurance.finalScoreStatus == RiskProfileLineInsurance.FinalScoreStatus.INELIGIBLE)
     }
@@ -31,17 +31,17 @@ class DisabilityRiskScoreTest {
     @Test
     fun `Given a user that is under 60 years old, the auto insurance risk calculator should return the score status INELIGIBLE`() {
         //GIVEN
-        val userProfile = UserProfile(
+        val userRiskProfile = UserRiskProfile(
             age=64,
             dependents=5,
             income=0,
-            maritalStatus = UserProfile.MaritalStatus.married,
+            maritalStatus = UserRiskProfile.MaritalStatus.married,
             house = null,
             questionScore = 2,
             vehicle = null
         )
         //WHEN
-        val riskProfileLineInsurance = disabilityInsuranceRiskScore.execute(userProfile)
+        val riskProfileLineInsurance = disabilityInsuranceRiskScore.execute(userRiskProfile)
         //THEN
         assert(riskProfileLineInsurance.finalScoreStatus == RiskProfileLineInsurance.FinalScoreStatus.INELIGIBLE)
     }
@@ -51,19 +51,19 @@ class DisabilityRiskScoreTest {
     //User has dependents, add 1 risk point to both the disability and life scores.
     fun `Given a user that is under 30, has dependents and is single, the auto insurance risk calculator should return the score status REGULAR and less 1 score points`() {
         //GIVEN
-        val userProfile = UserProfile(
+        val userRiskProfile = UserRiskProfile(
             age=25,
             dependents=1,
             income=10,
-            maritalStatus = UserProfile.MaritalStatus.single,
+            maritalStatus = UserRiskProfile.MaritalStatus.single,
             house = null,
             questionScore = 2,
-            vehicle = UserProfile.Vehicle(LocalDate.now().year)
+            vehicle = UserRiskProfile.Vehicle(LocalDate.now().year)
         )
         //WHEN
-        val riskProfileLineInsurance = disabilityInsuranceRiskScore.execute(userProfile)
+        val riskProfileLineInsurance = disabilityInsuranceRiskScore.execute(userRiskProfile)
         //THEN
-        assert(riskProfileLineInsurance.score ==userProfile.questionScore-1)
+        assert(riskProfileLineInsurance.score ==userRiskProfile.questionScore-1)
         assert(riskProfileLineInsurance.finalScoreStatus == RiskProfileLineInsurance.FinalScoreStatus.REGULAR)
     }
 
@@ -73,19 +73,19 @@ class DisabilityRiskScoreTest {
     //User is married, remove 1 risk point
     fun `Given a user that is under 30, doesn't have dependents,house is mortgaged and is married, the auto insurance risk calculator should return the score status REGULAR and less 2 score point`() {
         //GIVEN
-        val userProfile = UserProfile(
+        val userRiskProfile = UserRiskProfile(
             age=25,
             dependents=0,
             income=10,
-            maritalStatus = UserProfile.MaritalStatus.married,
-            house = UserProfile.House(UserProfile.OwnershipStatus.mortgaged),
+            maritalStatus = UserRiskProfile.MaritalStatus.married,
+            house = UserRiskProfile.House(UserRiskProfile.OwnershipStatus.mortgaged),
             questionScore = 3,
-            vehicle = UserProfile.Vehicle(LocalDate.now().year-10)
+            vehicle = UserRiskProfile.Vehicle(LocalDate.now().year-10)
         )
         //WHEN
-        val riskProfileLineInsurance = disabilityInsuranceRiskScore.execute(userProfile)
+        val riskProfileLineInsurance = disabilityInsuranceRiskScore.execute(userRiskProfile)
         //THEN
-        assert(riskProfileLineInsurance.score ==userProfile.questionScore-2)
+        assert(riskProfileLineInsurance.score ==userRiskProfile.questionScore-2)
         assert(riskProfileLineInsurance.finalScoreStatus == RiskProfileLineInsurance.FinalScoreStatus.REGULAR)
     }
 
@@ -94,19 +94,19 @@ class DisabilityRiskScoreTest {
     //The user has dependents, add 1 risk point to both the disability and life scores.
     fun `Given a user that is between 30 and 40 years old and has a dependencies, the auto insurance risk calculator should return the score status RESPONSIBLE`() {
         //GIVEN
-        val userProfile = UserProfile(
+        val userRiskProfile = UserRiskProfile(
             age=35,
             dependents=1,
             income=10,
-            maritalStatus = UserProfile.MaritalStatus.single,
+            maritalStatus = UserRiskProfile.MaritalStatus.single,
             house = null,
             questionScore = 3,
-            vehicle = UserProfile.Vehicle(LocalDate.now().year-6)
+            vehicle = UserRiskProfile.Vehicle(LocalDate.now().year-6)
         )
         //WHEN
-        val riskProfileLineInsurance = disabilityInsuranceRiskScore.execute(userProfile)
+        val riskProfileLineInsurance = disabilityInsuranceRiskScore.execute(userRiskProfile)
         //THEN
-        assert(riskProfileLineInsurance.score ==userProfile.questionScore)
+        assert(riskProfileLineInsurance.score ==userRiskProfile.questionScore)
         assert(riskProfileLineInsurance.finalScoreStatus == RiskProfileLineInsurance.FinalScoreStatus.RESPONSIBLE)
     }
 
@@ -117,19 +117,19 @@ class DisabilityRiskScoreTest {
     //User's income is above $200k, deduct 1 risk point from all lines of insurance.
     fun `Given a user that is between 30 and 40 years old, that has dependencies, that is married and has income above $200k, the auto insurance risk calculator should return the score status RESPONSIBLE and less 2 score point`() {
         //GIVEN
-        val userProfile = UserProfile(
+        val userRiskProfile = UserRiskProfile(
             age=35,
             dependents=1,
             income=200001,
-            maritalStatus = UserProfile.MaritalStatus.married,
+            maritalStatus = UserRiskProfile.MaritalStatus.married,
             house = null,
             questionScore = 5,
-            vehicle = UserProfile.Vehicle(LocalDate.now().year-4)
+            vehicle = UserRiskProfile.Vehicle(LocalDate.now().year-4)
         )
         //WHEN
-        val riskProfileLineInsurance = disabilityInsuranceRiskScore.execute(userProfile)
+        val riskProfileLineInsurance = disabilityInsuranceRiskScore.execute(userRiskProfile)
         //THEN
-        assert(riskProfileLineInsurance.score ==userProfile.questionScore-2)
+        assert(riskProfileLineInsurance.score ==userRiskProfile.questionScore-2)
         assert(riskProfileLineInsurance.finalScoreStatus == RiskProfileLineInsurance.FinalScoreStatus.RESPONSIBLE)
     }
 }

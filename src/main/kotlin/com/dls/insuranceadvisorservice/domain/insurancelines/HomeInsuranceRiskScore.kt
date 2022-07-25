@@ -2,18 +2,18 @@ package com.dls.insuranceadvisorservice.domain.insurancelines
 
 import com.dls.insuranceadvisorservice.domain.usecase.LineOfInsuranceRiskScoreCalculator
 import com.dls.insuranceadvisorservice.domain.RiskProfileLineInsurance
-import com.dls.insuranceadvisorservice.domain.UserProfile
+import com.dls.insuranceadvisorservice.domain.UserRiskProfile
 import com.dls.insuranceadvisorservice.domain.insurancelines.rules.*
 
-class HomeRiskScore: LineOfInsuranceRiskScoreCalculator {
+class HomeInsuranceRiskScore: LineOfInsuranceRiskScoreCalculator {
 
-    override fun execute(userProfile: UserProfile): RiskProfileLineInsurance {
+    override fun execute(userRiskProfile: UserRiskProfile): RiskProfileLineInsurance {
         var riskProfileBaseLine = RiskProfileLineInsurance(
-            RiskProfileLineInsurance.Name.HOME, userProfile.questionScore,
+            RiskProfileLineInsurance.Name.HOME, userRiskProfile.questionScore,
             RiskProfileLineInsurance.FinalScoreStatus.NOTCALCULATED
         )
         getRules().forEach {
-            it.execute(userProfile, riskProfileBaseLine);
+            it.execute(userRiskProfile, riskProfileBaseLine);
         }
         riskProfileBaseLine.calculateProfileBasedScore();
         return riskProfileBaseLine

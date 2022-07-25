@@ -1,25 +1,25 @@
-package com.dls.insuranceadvisorservice.controller.dto
+package com.dls.insuranceadvisorservice.adapter.dto
 
 import com.dls.insuranceadvisorservice.domain.RiskProfileLineInsurance
-import com.dls.insuranceadvisorservice.domain.UserProfile
+import com.dls.insuranceadvisorservice.domain.UserRiskProfile
 
 
-fun UserProfileRequest.toDomain() = UserProfile(
-        age = age.toInt(),
-        dependents = dependents.toInt(),
-        income = income.toInt(),
+fun UserPersonalInformationRequest.toDomain() = UserRiskProfile(
+        age = age!!,
+        dependents = dependents!!,
+        income = income!!,
         maritalStatus = maritalStatus,
         questionScore = riskQuestions.sum(),
         house = (house?.toDomain()),
         vehicle = (vehicle?.toDomain())
     )
 
-fun UserProfileRequest.HouseRequest.toDomain() = UserProfile.House(
+fun UserPersonalInformationRequest.HouseRequest.toDomain() = UserRiskProfile.House(
         ownershipStatus = ownershipStatus
         )
 
-fun UserProfileRequest.VehicleRequest.toDomain() = UserProfile.Vehicle(
-        year = year.toInt()
+fun UserPersonalInformationRequest.VehicleRequest.toDomain() = UserRiskProfile.Vehicle(
+        year = year!!
         )
 
 fun List<RiskProfileLineInsurance>.toResponse() = RiskProfileResponse(

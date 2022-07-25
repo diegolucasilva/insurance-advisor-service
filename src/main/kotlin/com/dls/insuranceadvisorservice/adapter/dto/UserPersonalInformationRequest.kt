@@ -1,33 +1,40 @@
-package com.dls.insuranceadvisorservice.controller.dto
+package com.dls.insuranceadvisorservice.adapter.dto
 
-import com.dls.insuranceadvisorservice.controller.validator.BooleanList
-import com.dls.insuranceadvisorservice.domain.UserProfile
+import com.dls.insuranceadvisorservice.adapter.validator.BooleanList
+import com.dls.insuranceadvisorservice.domain.UserRiskProfile
 import com.fasterxml.jackson.databind.PropertyNamingStrategies
 import com.fasterxml.jackson.databind.annotation.JsonNaming
+import javax.validation.Valid
 import javax.validation.constraints.NotNull
 import javax.validation.constraints.Positive
 import javax.validation.constraints.PositiveOrZero
 import javax.validation.constraints.Size
 
 @JsonNaming(PropertyNamingStrategies.SnakeCaseStrategy::class)
-data class UserProfileRequest(
+data class UserPersonalInformationRequest(
     @field:PositiveOrZero
-    val age: Integer,
+    @get:NotNull
+    val age: Int?,
     @field:PositiveOrZero
-    val dependents: Integer,
+    @get:NotNull
+    val dependents: Int?,
     val house: HouseRequest?,
     @field:PositiveOrZero
-    val income: Integer,
-    val maritalStatus: UserProfile.MaritalStatus,
+    @get:NotNull
+    val income: Int?,
+    val maritalStatus: UserRiskProfile.MaritalStatus,
     @field:BooleanList
     @field:Size(min = 3, max = 3)
     @field:NotNull
     val riskQuestions: List<Int>,
     val vehicle: VehicleRequest?,
     ) {
-    data class VehicleRequest(@field:Positive val year: Integer)
+    data class VehicleRequest(
+        @get:NotNull
+        @field:Positive val year: Int?
+        )
 
     @JsonNaming(PropertyNamingStrategies.SnakeCaseStrategy::class)
-    data class HouseRequest(val ownershipStatus: UserProfile.OwnershipStatus)
+    data class HouseRequest(val ownershipStatus: UserRiskProfile.OwnershipStatus)
 
 }

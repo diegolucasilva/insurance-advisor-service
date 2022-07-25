@@ -1,7 +1,7 @@
 package com.dls.insuranceadvisorservice.domain.insurancelines.rules;
 
 import com.dls.insuranceadvisorservice.domain.RiskProfileLineInsurance
-import com.dls.insuranceadvisorservice.domain.UserProfile
+import com.dls.insuranceadvisorservice.domain.UserRiskProfile
 import org.junit.jupiter.api.Test
 
 
@@ -42,11 +42,11 @@ internal class DependentsIncomeRuleTest {
         )
 
     private fun givenUserProfile(dependents: Int) =
-        UserProfile(
+        UserRiskProfile(
             age=30,
             dependents=dependents,
             income=1,
-            maritalStatus = UserProfile.MaritalStatus.married,
+            maritalStatus = UserRiskProfile.MaritalStatus.married,
             house = null,
             questionScore = 2,
             vehicle = null

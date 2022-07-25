@@ -1,21 +1,21 @@
 package com.dls.insuranceadvisorservice.domain.usecase
 
-import com.dls.insuranceadvisorservice.controller.RiskCalculatorUseCase
+import com.dls.insuranceadvisorservice.adapter.controller.RiskScoreCalculatorUseCase
 import com.dls.insuranceadvisorservice.domain.insurancelines.AutoInsuranceRiskScore
 import com.dls.insuranceadvisorservice.domain.RiskProfileLineInsurance
-import com.dls.insuranceadvisorservice.domain.UserProfile
+import com.dls.insuranceadvisorservice.domain.UserRiskProfile
 import com.dls.insuranceadvisorservice.domain.insurancelines.DisabilityInsuranceRiskScore
-import com.dls.insuranceadvisorservice.domain.insurancelines.HomeRiskScore
-import com.dls.insuranceadvisorservice.domain.insurancelines.LifeRiskScore
+import com.dls.insuranceadvisorservice.domain.insurancelines.HomeInsuranceRiskScore
+import com.dls.insuranceadvisorservice.domain.insurancelines.LifeInsuranceRiskScore
 
 import org.springframework.stereotype.Service
 
 @Service
-class RiskCalculatorUseCaseImpl: RiskCalculatorUseCase {
+class RiskScoreCalculatorUseCaseImpl: RiskScoreCalculatorUseCase {
 
-    override fun execute(userProfile: UserProfile): List<RiskProfileLineInsurance>{
+    override fun execute(userRiskProfile: UserRiskProfile): List<RiskProfileLineInsurance>{
         return getLineRiskCalculators().map {
-            it.execute(userProfile);
+            it.execute(userRiskProfile);
         }.toList()
     }
 
@@ -23,7 +23,7 @@ class RiskCalculatorUseCaseImpl: RiskCalculatorUseCase {
         return listOf(
             AutoInsuranceRiskScore(),
             DisabilityInsuranceRiskScore(),
-            HomeRiskScore(),
-            LifeRiskScore())
+            HomeInsuranceRiskScore(),
+            LifeInsuranceRiskScore())
     }
 }

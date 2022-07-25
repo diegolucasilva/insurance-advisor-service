@@ -1,4 +1,4 @@
-package com.dls.insuranceadvisorservice.config
+package com.dls.insuranceadvisorservice.adapter.config
 
 import org.slf4j.LoggerFactory
 import org.springframework.http.HttpStatus
@@ -13,7 +13,7 @@ import java.lang.IllegalArgumentException
 
 @ControllerAdvice
 @Component
-class ExceptionHandler(){
+class ExceptionHandler {
 
     @ExceptionHandler(Throwable::class)
     fun handleException(ex: Throwable): ResponseEntity<ErrorResponse> {
@@ -36,7 +36,7 @@ class ExceptionHandler(){
     private fun getDefaultValidationResponseMessage(fieldErrors: MutableList<FieldError>? = null, httpStatus: HttpStatus) : ResponseEntity<ErrorResponse> {
         val errorList: MutableList<ErrorResponse.ErrorDescriptor> = mutableListOf()
         fieldErrors?.forEach {
-            val error = ErrorResponse.ErrorDescriptor(parameterName= it.field, description = it.defaultMessage)
+            val error = ErrorResponse.ErrorDescriptor(parameterName = it.field, description = it.defaultMessage)
             errorList.add(error)
         }
         return ResponseEntity.status(httpStatus).body(ErrorResponse(errorList))

@@ -4,7 +4,7 @@ import com.fasterxml.jackson.databind.PropertyNamingStrategies
 import com.fasterxml.jackson.databind.annotation.JsonNaming
 import javax.validation.constraints.Positive
 
-data class UserProfile(
+data class UserRiskProfile(
     val age: Int,
     val dependents: Int,
     val income: Int,

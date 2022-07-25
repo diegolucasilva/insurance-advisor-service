@@ -1,4 +1,4 @@
-package com.dls.insuranceadvisorservice.controller.validator
+package com.dls.insuranceadvisorservice.adapter.validator
 
 import javax.validation.Constraint
 import javax.validation.ConstraintValidator
