@@ -35,7 +35,6 @@ Or we can just build it and run the jar file:
 ```
 ## Test
  [**postman collection**](./InsuranceAdvisor.postman_collection.json)
-
 ```
 curl --location --request POST 'localhost:8080/insurance/advisor' \
 --header 'Content-Type: application/json' \
@@ -57,4 +56,7 @@ Response example:
     "home": "economic",
     "life": "regular"
 }
+
+
 ```
+The swagger documentation can be accessed at http://localhost:8080/swagger-ui/index.html#
