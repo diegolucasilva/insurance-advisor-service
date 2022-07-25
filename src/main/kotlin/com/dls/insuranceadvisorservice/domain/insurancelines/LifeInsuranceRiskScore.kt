@@ -15,7 +15,7 @@ class LifeInsuranceRiskScore: LineOfInsuranceRiskScoreCalculator {
         getRules().forEach {
             it.execute(userRiskProfile, riskProfileBaseLine);
         }
-        riskProfileBaseLine.calculateProfileBasedScore();
+        riskProfileBaseLine.calculatePlanBasedOnScore();
         return riskProfileBaseLine
 
     }

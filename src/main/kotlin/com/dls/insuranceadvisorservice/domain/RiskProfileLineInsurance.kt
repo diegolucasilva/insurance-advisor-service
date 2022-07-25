@@ -8,7 +8,7 @@ class RiskProfileLineInsurance(
     constructor() : this(null,0, FinalScoreStatus.NOTCALCULATED)
 
 
-    fun calculateProfileBasedScore(){
+    fun calculatePlanBasedOnScore(){
         if(finalScoreStatus!= FinalScoreStatus.INELIGIBLE){
             when {
                 score <= 0 -> finalScoreStatus = FinalScoreStatus.ECONOMIC

@@ -1,6 +1,6 @@
 package com.dls.insuranceadvisorservice.domain.usecase
 
-import com.dls.insuranceadvisorservice.adapter.controller.RiskScoreProcessorUseCase
+import com.dls.insuranceadvisorservice.adapter.port.RiskScoreProcessorUseCase
 import com.dls.insuranceadvisorservice.domain.insurancelines.AutoInsuranceRiskScore
 import com.dls.insuranceadvisorservice.domain.RiskProfileLineInsurance
 import com.dls.insuranceadvisorservice.domain.UserRiskProfile
