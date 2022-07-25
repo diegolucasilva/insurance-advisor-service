@@ -10,10 +10,12 @@ Service responsible for generating a customized insurance package for users spec
 - [**Domain**](./src/main/kotlin/com/dls/insuranceadvisorservice/domain): The [**RiskProfileLineInsurance**](./src/main/kotlin/com/dls/insuranceadvisorservice/domain/RiskProfileLineInsurance.kt) is responsible contains both state and behavior of a risk profile for each any line insurance and calculate a plan ("economic", "regular", "responsible") based on the risk score.
 
 ## Code Design Strategy
-The following strategies were used to have an understandable, extensible and maintainable code.
-- The adapter layer is a gateway for a user or any program else to interact with the application. There's no domain logic here.
-- It's possible to create new rules easily, just by implementing the RiskScoreRule interface. After that, it can be used in any line of insurance.
-- It's possible to create new lines of insurance risk score calculator easily, just by implementing the LineOfInsuranceRiskScoreCalculator interface. After that, you need to add the newline in the use case orchestration.
+The following strategies were used to have an understandable, extensible and maintainable code:
+- The [**adapter**](./src/main/kotlin/com/dls/insuranceadvisorservice/adapter) layer is a gateway for a user or any program else to interact with the application. There's no domain logic here.
+- It's possible to create new [**rules**](./src/main/kotlin/com/dls/insuranceadvisorservice/domain/insurancelines/rules) easily, just by implementing the [**RiskScoreRule**](./src/main/kotlin/com/dls/insuranceadvisorservice/domain/insurancelines/RiskScoreRule.kt) interface. After that, it can be used in [**any line of insurance**](./src/main/kotlin/com/dls/insuranceadvisorservice/domain/insurancelines).
+- It's possible to create new lines of insurance risk score calculator easily, just by implementing the [**LineOfInsuranceRiskScoreCalculator**](./src/main/kotlin/com/dls/insuranceadvisorservice/domain/usecase/LineOfInsuranceRiskScoreCalculator.kt) interface. After that, you need to add the newline in the [**use case orchestration**](./src/main/kotlin/com/dls/insuranceadvisorservice/domain/usecase/RiskScoreProcessorUseCaseImpl.kt).
+
+![Diagram](./insurance-advisor-service.jpg)
 
 ## Tech Stack 
 - **Language**: Kotlin
