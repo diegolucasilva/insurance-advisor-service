@@ -16,7 +16,7 @@ import org.springframework.http.ResponseEntity
 
 
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
-class InsuranceAdvisorControllerTest {
+internal class InsuranceAdvisorControllerTest {
 
     @Autowired
     lateinit var testRestTemplate: TestRestTemplate

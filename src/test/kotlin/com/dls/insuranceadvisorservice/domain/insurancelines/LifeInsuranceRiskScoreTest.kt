@@ -5,7 +5,7 @@ import com.dls.insuranceadvisorservice.domain.UserRiskProfile
 import org.junit.jupiter.api.Test
 import java.time.LocalDate
 
-class LifeInsuranceRiskScoreTest {
+internal class LifeInsuranceRiskScoreTest {
 
     private val lifeInsuranceRiskScore = LifeInsuranceRiskScore()
 

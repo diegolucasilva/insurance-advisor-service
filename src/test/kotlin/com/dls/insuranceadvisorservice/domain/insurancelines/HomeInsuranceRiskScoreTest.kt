@@ -6,7 +6,7 @@ import org.junit.jupiter.api.Test
 import java.time.LocalDate
 
 
-class HomeInsuranceRiskScoreTest {
+internal class HomeInsuranceRiskScoreTest {
 
     private val homeInsuranceRiskScore= HomeInsuranceRiskScore()
 
