@@ -8,7 +8,7 @@ class OldAgeRule : RiskScoreRule {
 
     override fun execute(userRiskProfile: UserRiskProfile, riskProfileLineInsurance: RiskProfileLineInsurance){
         if(userRiskProfile.age > 60){
-            riskProfileLineInsurance.finalScoreStatus = RiskProfileLineInsurance.FinalScoreStatus.INELIGIBLE;
+            riskProfileLineInsurance.makeIneligible()
         }
     }
 }

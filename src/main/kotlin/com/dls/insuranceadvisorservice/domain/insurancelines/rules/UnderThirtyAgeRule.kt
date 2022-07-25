@@ -8,7 +8,7 @@ class UnderThirtyAgeRule : RiskScoreRule {
 
     override fun execute(userRiskProfile: UserRiskProfile, riskProfileLineInsurance: RiskProfileLineInsurance){
         if(userRiskProfile.age < 30){
-            riskProfileLineInsurance.score-=2;
+            riskProfileLineInsurance.decrementScore(2);
         }
     }
 }

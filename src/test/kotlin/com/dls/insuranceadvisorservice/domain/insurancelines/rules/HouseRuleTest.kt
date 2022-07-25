@@ -23,7 +23,7 @@ internal class HouseRuleTest {
     }
 
     @Test
-    fun `Given a user with a house,this rule must keep the final score status to NOTCALCULATED`() {
+    fun `Given a user with a house,this rule must keep the score`() {
         //GIVEN
         val actualScore = 2
         val userRiskProfile = givenUserProfile(UserRiskProfile.House(UserRiskProfile.OwnershipStatus.mortgaged))
@@ -31,16 +31,12 @@ internal class HouseRuleTest {
         //WHEN
         rule.execute(userRiskProfile,riskProfileBaseLine);
         //THEN
-        assert(riskProfileBaseLine.score == actualScore)
-        assert(riskProfileBaseLine.finalScoreStatus == RiskProfileLineInsurance.FinalScoreStatus.NOTCALCULATED)
-    }
+        assert(riskProfileBaseLine.score == actualScore)}
 
     private fun givenARiskProfileBaseLine(actualScore: Int) =
         RiskProfileLineInsurance(
             name=RiskProfileLineInsurance.Name.AUTO,
-            score=actualScore,
-            finalScoreStatus = RiskProfileLineInsurance.FinalScoreStatus.NOTCALCULATED
-        )
+            score=actualScore)
 
     private fun givenUserProfile(house: UserRiskProfile.House?=null) =
         UserRiskProfile(

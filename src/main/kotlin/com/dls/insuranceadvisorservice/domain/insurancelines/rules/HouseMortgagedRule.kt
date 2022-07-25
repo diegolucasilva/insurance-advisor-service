@@ -8,7 +8,7 @@ class HouseMortgagedRule: RiskScoreRule {
 
      override fun execute(userRiskProfile: UserRiskProfile, riskProfileLineInsurance: RiskProfileLineInsurance){
         if(userRiskProfile.house?.ownershipStatus == UserRiskProfile.OwnershipStatus.mortgaged){
-            riskProfileLineInsurance.score+=1;
+            riskProfileLineInsurance.incrementScore();
         }
     }
 }

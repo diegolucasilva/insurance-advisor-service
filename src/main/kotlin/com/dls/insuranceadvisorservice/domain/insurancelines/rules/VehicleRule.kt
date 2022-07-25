@@ -8,7 +8,7 @@ class VehicleRule: RiskScoreRule {
 
      override fun execute(userRiskProfile: UserRiskProfile, riskProfileLineInsurance: RiskProfileLineInsurance){
         if(userRiskProfile.vehicle==null){
-            riskProfileLineInsurance.finalScoreStatus = RiskProfileLineInsurance.FinalScoreStatus.INELIGIBLE
+            riskProfileLineInsurance.makeIneligible()
         }
     }
 }

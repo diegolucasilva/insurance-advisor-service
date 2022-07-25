@@ -1,25 +1,30 @@
 package com.dls.insuranceadvisorservice.domain
 
 class RiskProfileLineInsurance(
-    val name: Name?,
+    val name: Name,
     var score: Int,
-    var finalScoreStatus: FinalScoreStatus
+    var finalScoreStatus: FinalScoreStatus?=null
     ) {
-    constructor() : this(null,0, FinalScoreStatus.NOTCALCULATED)
 
-
+    fun incrementScore(value: Int=1){
+        score += value
+    }
+    fun decrementScore(value: Int=1){
+        score -= value
+    }
+    fun makeIneligible(){
+        finalScoreStatus = FinalScoreStatus.INELIGIBLE
+    }
     fun calculatePlanBasedOnScore(){
         if(finalScoreStatus!= FinalScoreStatus.INELIGIBLE){
-            when {
-                score <= 0 -> finalScoreStatus = FinalScoreStatus.ECONOMIC
-                score in (1..2) -> finalScoreStatus = FinalScoreStatus.REGULAR
-                else -> finalScoreStatus= FinalScoreStatus.RESPONSIBLE
+            finalScoreStatus = when {
+                score <= 0 -> FinalScoreStatus.ECONOMIC
+                score in (1..2) -> FinalScoreStatus.REGULAR
+                else -> FinalScoreStatus.RESPONSIBLE
             }
         }
     }
-
-
     enum class Name { AUTO, DISABILITY, HOME, LIFE}
-    enum class FinalScoreStatus { NOTCALCULATED, REGULAR, INELIGIBLE, ECONOMIC, RESPONSIBLE}
+    enum class FinalScoreStatus {REGULAR, INELIGIBLE, ECONOMIC, RESPONSIBLE}
 }
 

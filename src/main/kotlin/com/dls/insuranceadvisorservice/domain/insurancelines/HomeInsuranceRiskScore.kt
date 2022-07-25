@@ -9,9 +9,7 @@ class HomeInsuranceRiskScore: LineOfInsuranceRiskScoreCalculator {
 
     override fun execute(userRiskProfile: UserRiskProfile): RiskProfileLineInsurance {
         var riskProfileBaseLine = RiskProfileLineInsurance(
-            RiskProfileLineInsurance.Name.HOME, userRiskProfile.questionScore,
-            RiskProfileLineInsurance.FinalScoreStatus.NOTCALCULATED
-        )
+            RiskProfileLineInsurance.Name.HOME, userRiskProfile.questionScore)
         getRules().forEach {
             it.execute(userRiskProfile, riskProfileBaseLine);
         }

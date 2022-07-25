@@ -8,7 +8,7 @@ class HouseRule: RiskScoreRule {
 
      override fun execute(userRiskProfile: UserRiskProfile, riskProfileLineInsurance: RiskProfileLineInsurance){
         if(userRiskProfile.house==null){
-            riskProfileLineInsurance.finalScoreStatus = RiskProfileLineInsurance.FinalScoreStatus.INELIGIBLE
+            riskProfileLineInsurance.makeIneligible()
         }
     }
 }

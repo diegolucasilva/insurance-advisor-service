@@ -9,7 +9,7 @@ class MarriedDisabilityRule: RiskScoreRule {
 
      override fun execute(userRiskProfile: UserRiskProfile, riskProfileLineInsurance: RiskProfileLineInsurance){
         if(userRiskProfile.maritalStatus == UserRiskProfile.MaritalStatus.married){
-            riskProfileLineInsurance.score-=1;
+            riskProfileLineInsurance.decrementScore();
         }
     }
 }

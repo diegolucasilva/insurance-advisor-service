@@ -35,9 +35,7 @@ internal class MarriedLifeRuleTest {
     private fun givenARiskProfileBaseLine(actualScore: Int) =
         RiskProfileLineInsurance(
             name=RiskProfileLineInsurance.Name.AUTO,
-            score=actualScore,
-            finalScoreStatus = RiskProfileLineInsurance.FinalScoreStatus.NOTCALCULATED
-        )
+            score=actualScore)
 
     private fun givenUserProfile(maritalStatus: UserRiskProfile.MaritalStatus) =
         UserRiskProfile(

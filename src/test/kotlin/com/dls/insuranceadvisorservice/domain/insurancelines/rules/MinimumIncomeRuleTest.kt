@@ -1,3 +1,4 @@
+
 package com.dls.insuranceadvisorservice.domain.insurancelines.rules;
 
 import com.dls.insuranceadvisorservice.domain.RiskProfileLineInsurance
@@ -23,7 +24,7 @@ internal class MinimumIncomeRuleTest {
     }
 
     @Test
-    fun `Given a user with income, this rule must keep the final score status to NOTCALCULATED`() {
+    fun `Given a user with income, this rule must keep the  score`() {
         //GIVEN
         val actualScore = 2
         val userProfile = givenUserProfile(100001)
@@ -32,16 +33,12 @@ internal class MinimumIncomeRuleTest {
         rule.execute(userProfile,riskProfileBaseLine);
         //THEN
         assert(riskProfileBaseLine.score == actualScore)
-        assert(riskProfileBaseLine.finalScoreStatus == RiskProfileLineInsurance.FinalScoreStatus.NOTCALCULATED)
-
     }
 
     private fun givenARiskProfileBaseLine(actualScore: Int) =
         RiskProfileLineInsurance(
             name=RiskProfileLineInsurance.Name.AUTO,
-            score=actualScore,
-            finalScoreStatus = RiskProfileLineInsurance.FinalScoreStatus.NOTCALCULATED
-        )
+            score=actualScore)
 
     private fun givenUserProfile(income: Int) =
         UserRiskProfile(

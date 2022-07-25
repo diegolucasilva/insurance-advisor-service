@@ -24,7 +24,7 @@ internal class OldAgeRuleTest {
     }
 
     @Test
-    fun `Given a use under 60 years old, this rule must keep the final score status to NOTCALCULATED`() {
+    fun `Given a use under 60 years old, this rule must keep the  score`() {
         //GIVEN
         val actualScore = 2
         val userProfile = givenUserProfile(40)
@@ -33,16 +33,12 @@ internal class OldAgeRuleTest {
         rule.execute(userProfile,riskProfileBaseLine);
         //THEN
         assert(riskProfileBaseLine.score ==actualScore)
-        assert(riskProfileBaseLine.finalScoreStatus == RiskProfileLineInsurance.FinalScoreStatus.NOTCALCULATED)
-
     }
 
     private fun givenARiskProfileBaseLine(actualScore: Int) =
         RiskProfileLineInsurance(
             name=RiskProfileLineInsurance.Name.AUTO,
-            score=actualScore,
-            finalScoreStatus = RiskProfileLineInsurance.FinalScoreStatus.NOTCALCULATED
-        )
+            score=actualScore)
 
     private fun givenUserProfile(age: Int) =
         UserRiskProfile(

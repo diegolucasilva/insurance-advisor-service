@@ -10,7 +10,7 @@ class HighIncomeRule: RiskScoreRule {
 
      override fun execute(userRiskProfile: UserRiskProfile, riskProfileLineInsurance: RiskProfileLineInsurance){
         if(userRiskProfile.income > HIGH_INCOME){
-            riskProfileLineInsurance.score-=1;
+            riskProfileLineInsurance.decrementScore();
         }
     }
 }
