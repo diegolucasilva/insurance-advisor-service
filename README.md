@@ -15,7 +15,7 @@ The following strategies were used to have an understandable, extensible and mai
 - It's possible to create new [**rules**](./src/main/kotlin/com/dls/insuranceadvisorservice/domain/insurancelines/rules) easily, just by implementing the [**RiskScoreRule**](./src/main/kotlin/com/dls/insuranceadvisorservice/domain/insurancelines/RiskScoreRule.kt) interface. After that, it can be used in [**any line of insurance**](./src/main/kotlin/com/dls/insuranceadvisorservice/domain/insurancelines).
 - It's possible to create new lines of insurance risk score calculator easily, just by implementing the [**LineOfInsuranceRiskScoreCalculator**](./src/main/kotlin/com/dls/insuranceadvisorservice/domain/usecase/LineOfInsuranceRiskScoreCalculator.kt) interface. After that, you need to add the newline in the [**use case orchestration**](./src/main/kotlin/com/dls/insuranceadvisorservice/domain/usecase/RiskScoreProcessorUseCaseImpl.kt).
 
-![Diagram](./insurance-advisor-service.jpg)
+![Diagram](./insurance-advisor-service.png)
 
 ## Tech Stack 
 - **Language**: Kotlin
