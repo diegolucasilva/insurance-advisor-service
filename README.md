@@ -49,3 +49,12 @@ curl --location --request POST 'localhost:8080/insurance/advisor' \
 "vehicle": {"year": 2018}
 }'
 ```
+Response example:
+```json
+{
+    "auto": "regular",
+    "disability": "ineligible",
+    "home": "economic",
+    "life": "regular"
+}
+```
