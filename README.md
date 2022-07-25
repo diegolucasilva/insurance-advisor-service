@@ -3,11 +3,11 @@ Service responsible for generating a customized insurance package for users spec
 
 ## Main Architectural Components
 
-- [**Adapter**](./src/main/kotlin/com/dls/insuranceadvisorservice/adapter): Responsible to expose a REST API POST endpoint /insurance/advisor. The [**InsuranceAdvisorController**](./src/main/kotlin/com/dls/insuranceadvisorservice/adapter/controller) calls an inbound port ([**RiskScoreProcessorUseCase**](./src/main/kotlin/com/dls/insuranceadvisorservice/adapter/port/RiskScoreProcessorUseCase.kt)) throughout an interface.
+- [**Adapter**](./src/main/kotlin/com/dls/insuranceadvisorservice/adapter): Responsible to expose a REST API POST endpoint /insurance/advisor.([**RiskScoreProcessorUseCase**](./src/main/kotlin/com/dls/insuranceadvisorservice/adapter/port/RiskScoreProcessorUseCase.kt)) throughout an interface.
 - [**UseCase**](./src/main/kotlin/com/dls/insuranceadvisorservice/domain/usecase): This use case provide an implementation for accessing the domain logic responsible to calculate a risk profile for each line of insurance.
 - [**InsuranceLines**](./src/main/kotlin/com/dls/insuranceadvisorservice/domain/insurancelines): Responsible to calculate a risk profile for each line of insurance.
 - [**Rules**](./src/main/kotlin/com/dls/insuranceadvisorservice/domain/insurancelines/rules): Contains all rules that can be used to calculate risk score.
-- [**Domain**](./src/main/kotlin/com/dls/insuranceadvisorservice/domain): The [**RiskProfileLineInsurance**](./src/main/kotlin/com/dls/insuranceadvisorservice/domain/RiskProfileLineInsurance.kt) is responsible contains both state and behavior of a risk profile for each any line insurance and calculate a plan ("economic", "regular", "responsible") based on the risk score.
+- [**Domain**](./src/main/kotlin/com/dls/insuranceadvisorservice/domain): The [**RiskProfileLineInsurance**](./src/main/kotlin/com/dls/insuranceadvisorservice/domain/RiskProfileLineInsurance.kt) contains both state and behavior of a risk profile for any line insurance and calculate a plan ("economic", "regular", "responsible") based on the risk score.
 
 ## Code Design Strategy
 The following strategies were used to have an understandable, extensible and maintainable code:
