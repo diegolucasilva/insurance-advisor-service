@@ -4,6 +4,7 @@ import com.dls.insuranceadvisorservice.adapter.dto.RiskProfileResponse
 import com.dls.insuranceadvisorservice.adapter.dto.UserPersonalInformationRequest
 import com.dls.insuranceadvisorservice.adapter.dto.toDomain
 import com.dls.insuranceadvisorservice.adapter.dto.toResponse
+import com.dls.insuranceadvisorservice.adapter.port.RiskScoreProcessorUseCase
 import org.springframework.http.HttpStatus
 import org.springframework.validation.annotation.Validated
 import org.springframework.web.bind.annotation.PostMapping
