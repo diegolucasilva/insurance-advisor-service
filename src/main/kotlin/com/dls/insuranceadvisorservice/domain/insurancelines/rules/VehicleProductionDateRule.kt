@@ -9,14 +9,14 @@ class VehicleProductionDateRule: RiskScoreRule {
 
      override fun execute(userRiskProfile: UserRiskProfile, riskProfileLineInsurance: RiskProfileLineInsurance){
         if(wasProducedInTheLastFiveYear(userRiskProfile.vehicle?.year)){
-            riskProfileLineInsurance.incrementScore();
+            riskProfileLineInsurance.incrementScore()
         }
     }
     private fun wasProducedInTheLastFiveYear(year: Int?): Boolean{
         if(year!=null){
             return (LocalDate.now().year - year.toInt()) <= 5
         }
-        return false;
+        return false
     }
 
 }

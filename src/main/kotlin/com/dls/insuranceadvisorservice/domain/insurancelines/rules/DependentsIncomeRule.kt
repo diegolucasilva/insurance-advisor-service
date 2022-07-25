@@ -8,7 +8,7 @@ class DependentsIncomeRule: RiskScoreRule {
 
      override fun execute(userRiskProfile: UserRiskProfile, riskProfileLineInsurance: RiskProfileLineInsurance){
         if(userRiskProfile.dependents > 0){
-            riskProfileLineInsurance.incrementScore();
+            riskProfileLineInsurance.incrementScore()
         }
     }
 }
