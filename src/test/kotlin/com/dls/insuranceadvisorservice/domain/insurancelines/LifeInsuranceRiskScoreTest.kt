@@ -1,13 +1,13 @@
 package com.dls.insuranceadvisorservice.domain.insurancelines;
 
-import com.dls.insuranceadvisorservice.domain.RiskProfileLineInsurance
+import com.dls.insuranceadvisorservice.domain.RiskProfileForInsuranceLine
 import com.dls.insuranceadvisorservice.domain.UserRiskProfile
 import org.junit.jupiter.api.Test
 import java.time.LocalDate
 
 internal class LifeInsuranceRiskScoreTest {
 
-    private val lifeInsuranceRiskScore = LifeInsuranceRiskScore()
+    private val lifeInsuranceRiskScore = LifeInsuranceLineRiskScore()
 
 
     @Test
@@ -25,7 +25,7 @@ internal class LifeInsuranceRiskScoreTest {
         //WHEN
         val riskProfileLineInsurance = lifeInsuranceRiskScore.execute(userRiskProfile)
         //THEN
-        assert(riskProfileLineInsurance.finalScoreStatus == RiskProfileLineInsurance.FinalScoreStatus.INELIGIBLE)
+        assert(riskProfileLineInsurance.insurancePlanStatus == RiskProfileForInsuranceLine.InsurancePlanStatus.INELIGIBLE)
     }
 
     @Test
@@ -46,7 +46,7 @@ internal class LifeInsuranceRiskScoreTest {
         val riskProfileLineInsurance = lifeInsuranceRiskScore.execute(userRiskProfile)
         //THEN
         assert(riskProfileLineInsurance.score ==userRiskProfile.questionScore-1)
-        assert(riskProfileLineInsurance.finalScoreStatus == RiskProfileLineInsurance.FinalScoreStatus.REGULAR)
+        assert(riskProfileLineInsurance.insurancePlanStatus == RiskProfileForInsuranceLine.InsurancePlanStatus.REGULAR)
     }
 
     //User is under 30 years old, deduct 2 risk points from all lines of insurance.
@@ -67,7 +67,7 @@ internal class LifeInsuranceRiskScoreTest {
         val riskProfileLineInsurance = lifeInsuranceRiskScore.execute(userRiskProfile)
         //THEN
         assert(riskProfileLineInsurance.score ==userRiskProfile.questionScore-1)
-        assert(riskProfileLineInsurance.finalScoreStatus == RiskProfileLineInsurance.FinalScoreStatus.REGULAR)
+        assert(riskProfileLineInsurance.insurancePlanStatus == RiskProfileForInsuranceLine.InsurancePlanStatus.REGULAR)
     }
 
     @Test
@@ -88,7 +88,7 @@ internal class LifeInsuranceRiskScoreTest {
         val riskProfileLineInsurance = lifeInsuranceRiskScore.execute(userRiskProfile)
         //THEN
         assert(riskProfileLineInsurance.score ==userRiskProfile.questionScore)
-        assert(riskProfileLineInsurance.finalScoreStatus == RiskProfileLineInsurance.FinalScoreStatus.RESPONSIBLE)
+        assert(riskProfileLineInsurance.insurancePlanStatus == RiskProfileForInsuranceLine.InsurancePlanStatus.RESPONSIBLE)
     }
 
     @Test
@@ -111,6 +111,6 @@ internal class LifeInsuranceRiskScoreTest {
         val riskProfileLineInsurance = lifeInsuranceRiskScore.execute(userRiskProfile)
         //THEN
         assert(riskProfileLineInsurance.score ==userRiskProfile.questionScore)
-        assert(riskProfileLineInsurance.finalScoreStatus == RiskProfileLineInsurance.FinalScoreStatus.RESPONSIBLE)
+        assert(riskProfileLineInsurance.insurancePlanStatus == RiskProfileForInsuranceLine.InsurancePlanStatus.RESPONSIBLE)
     }
 }

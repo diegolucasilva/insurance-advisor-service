@@ -1,6 +1,6 @@
 package com.dls.insuranceadvisorservice.domain.insurancelines.rules;
 
-import com.dls.insuranceadvisorservice.domain.RiskProfileLineInsurance
+import com.dls.insuranceadvisorservice.domain.RiskProfileForInsuranceLine
 import com.dls.insuranceadvisorservice.domain.UserRiskProfile
 import org.junit.jupiter.api.Test
 
@@ -34,8 +34,8 @@ internal class HighIncomeRuleTest {
     }
 
     private fun givenARiskProfileBaseLine(actualScore: Int) =
-        RiskProfileLineInsurance(
-            name=RiskProfileLineInsurance.Name.AUTO,
+        RiskProfileForInsuranceLine(
+            name=RiskProfileForInsuranceLine.Name.AUTO,
             score=actualScore)
 
     private fun givenUserProfile(income: Int) =

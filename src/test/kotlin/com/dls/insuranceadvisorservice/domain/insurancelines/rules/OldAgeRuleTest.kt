@@ -1,6 +1,6 @@
 package com.dls.insuranceadvisorservice.domain.insurancelines.rules;
 
-import com.dls.insuranceadvisorservice.domain.RiskProfileLineInsurance
+import com.dls.insuranceadvisorservice.domain.RiskProfileForInsuranceLine
 import com.dls.insuranceadvisorservice.domain.UserRiskProfile
 import org.junit.jupiter.api.Test
 
@@ -19,7 +19,7 @@ internal class OldAgeRuleTest {
         rule.execute(userProfile,riskProfileBaseLine);
         //THEN
         assert(riskProfileBaseLine.score == actualScore)
-        assert(riskProfileBaseLine.finalScoreStatus == RiskProfileLineInsurance.FinalScoreStatus.INELIGIBLE)
+        assert(riskProfileBaseLine.insurancePlanStatus == RiskProfileForInsuranceLine.InsurancePlanStatus.INELIGIBLE)
 
     }
 
@@ -36,8 +36,8 @@ internal class OldAgeRuleTest {
     }
 
     private fun givenARiskProfileBaseLine(actualScore: Int) =
-        RiskProfileLineInsurance(
-            name=RiskProfileLineInsurance.Name.AUTO,
+        RiskProfileForInsuranceLine(
+            name=RiskProfileForInsuranceLine.Name.AUTO,
             score=actualScore)
 
     private fun givenUserProfile(age: Int) =

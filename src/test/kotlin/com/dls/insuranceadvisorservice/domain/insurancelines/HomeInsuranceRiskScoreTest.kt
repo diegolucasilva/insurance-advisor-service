@@ -1,6 +1,6 @@
 package com.dls.insuranceadvisorservice.domain.insurancelines;
 
-import com.dls.insuranceadvisorservice.domain.RiskProfileLineInsurance
+import com.dls.insuranceadvisorservice.domain.RiskProfileForInsuranceLine
 import com.dls.insuranceadvisorservice.domain.UserRiskProfile
 import org.junit.jupiter.api.Test
 import java.time.LocalDate
@@ -8,7 +8,7 @@ import java.time.LocalDate
 
 internal class HomeInsuranceRiskScoreTest {
 
-    private val homeInsuranceRiskScore= HomeInsuranceRiskScore()
+    private val homeInsuranceRiskScore= HomeInsuranceLineRiskScore()
 
     @Test
     fun `Given a user that doesn't have a house, the auto insurance risk calculator should return the score status INELIGIBLE`() {
@@ -25,7 +25,7 @@ internal class HomeInsuranceRiskScoreTest {
         //WHEN
         val riskProfileLineInsurance = homeInsuranceRiskScore.execute(userRiskProfile)
         //THEN
-        assert(riskProfileLineInsurance.finalScoreStatus == RiskProfileLineInsurance.FinalScoreStatus.INELIGIBLE)
+        assert(riskProfileLineInsurance.insurancePlanStatus == RiskProfileForInsuranceLine.InsurancePlanStatus.INELIGIBLE)
     }
 
 
@@ -46,7 +46,7 @@ internal class HomeInsuranceRiskScoreTest {
         val riskProfileLineInsurance = homeInsuranceRiskScore.execute(userRiskProfile)
         //THEN
         assert(riskProfileLineInsurance.score ==userRiskProfile.questionScore-2)
-        assert(riskProfileLineInsurance.finalScoreStatus == RiskProfileLineInsurance.FinalScoreStatus.ECONOMIC)
+        assert(riskProfileLineInsurance.insurancePlanStatus == RiskProfileForInsuranceLine.InsurancePlanStatus.ECONOMIC)
     }
 
     @Test
@@ -67,7 +67,7 @@ internal class HomeInsuranceRiskScoreTest {
         val riskProfileLineInsurance = homeInsuranceRiskScore.execute(userRiskProfile)
         //THEN
         assert(riskProfileLineInsurance.score ==userRiskProfile.questionScore-1)
-        assert(riskProfileLineInsurance.finalScoreStatus == RiskProfileLineInsurance.FinalScoreStatus.REGULAR)
+        assert(riskProfileLineInsurance.insurancePlanStatus == RiskProfileForInsuranceLine.InsurancePlanStatus.REGULAR)
     }
 
     @Test
@@ -88,6 +88,6 @@ internal class HomeInsuranceRiskScoreTest {
         val riskProfileLineInsurance = homeInsuranceRiskScore.execute(userRiskProfile)
         //THEN
         assert(riskProfileLineInsurance.score ==userRiskProfile.questionScore-2)
-        assert(riskProfileLineInsurance.finalScoreStatus == RiskProfileLineInsurance.FinalScoreStatus.REGULAR)
+        assert(riskProfileLineInsurance.insurancePlanStatus == RiskProfileForInsuranceLine.InsurancePlanStatus.REGULAR)
     }
 }

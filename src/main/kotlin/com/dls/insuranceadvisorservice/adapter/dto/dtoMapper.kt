@@ -1,6 +1,6 @@
 package com.dls.insuranceadvisorservice.adapter.dto
 
-import com.dls.insuranceadvisorservice.domain.RiskProfileLineInsurance
+import com.dls.insuranceadvisorservice.domain.RiskProfileForInsuranceLine
 import com.dls.insuranceadvisorservice.domain.UserRiskProfile
 
 
@@ -22,10 +22,10 @@ fun UserPersonalInformationRequest.VehicleRequest.toDomain() = UserRiskProfile.V
         year = year!!
         )
 
-fun List<RiskProfileLineInsurance>.toResponse() = RiskProfileResponse(
-        auto = this.first { it.name ==RiskProfileLineInsurance.Name.AUTO }.finalScoreStatus?.name!!.lowercase(),
-        disability = this.first { it.name ==RiskProfileLineInsurance.Name.DISABILITY}.finalScoreStatus?.name!!.lowercase(),
-        home =  this.first { it.name ==RiskProfileLineInsurance.Name.HOME}.finalScoreStatus?.name!!.lowercase(),
-        life =this.first { it.name ==RiskProfileLineInsurance.Name.LIFE}.finalScoreStatus?.name!!.lowercase(),
+fun List<RiskProfileForInsuranceLine>.toResponse() = RiskProfileResponse(
+        auto = this.first { it.name ==RiskProfileForInsuranceLine.Name.AUTO }.insurancePlanStatus?.name!!.lowercase(),
+        disability = this.first { it.name ==RiskProfileForInsuranceLine.Name.DISABILITY}.insurancePlanStatus?.name!!.lowercase(),
+        home =  this.first { it.name ==RiskProfileForInsuranceLine.Name.HOME}.insurancePlanStatus?.name!!.lowercase(),
+        life =this.first { it.name ==RiskProfileForInsuranceLine.Name.LIFE}.insurancePlanStatus?.name!!.lowercase(),
         )
 
