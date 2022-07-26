@@ -3,17 +3,17 @@ Service responsible for generating a customized insurance profile for users' spe
 
 ## Main Architectural Components
 
-- [**Adapter**](./src/main/kotlin/com/dls/insuranceadvisorservice/adapter): Responsible to expose a REST API POST endpoint /insurance/advisor.([**RiskScoreProcessorUseCase**](./src/main/kotlin/com/dls/insuranceadvisorservice/adapter/port/RiskScoreProcessorUseCase.kt)) throughout an interface.
+- [**Adapter**](./src/main/kotlin/com/dls/insuranceadvisorservice/adapter): Responsible to expose a REST API POST endpoint /insurance/advisor.
 - [**UseCase**](./src/main/kotlin/com/dls/insuranceadvisorservice/domain/usecase): This use case provide an implementation for accessing the domain logic responsible to calculate a risk profile for each line of insurance.
 - [**InsuranceLines**](./src/main/kotlin/com/dls/insuranceadvisorservice/domain/insurancelines): Responsible to calculate a risk profile for each line of insurance.
 - [**Rules**](./src/main/kotlin/com/dls/insuranceadvisorservice/domain/insurancelines/rules): Contains all rules that can be used to calculate risk score.
-- [**Domain**](./src/main/kotlin/com/dls/insuranceadvisorservice/domain): The [**RiskProfileLineInsurance**](./src/main/kotlin/com/dls/insuranceadvisorservice/domain/RiskProfileLineInsurance.kt) contains both state and behavior of a risk profile for any line insurance and calculate a plan ("economic", "regular", "responsible") based on the risk score.
+- [**Domain**](./src/main/kotlin/com/dls/insuranceadvisorservice/domain): The [**RiskProfileForInsuranceLine**](./src/main/kotlin/com/dls/insuranceadvisorservice/domain/RiskProfileForInsuranceLine.kt) contains both state and behavior of a risk profile for any line insurance and calculate a plan ("economic", "regular", "responsible") based on the risk score.
 
 ## Code Design Strategy
 The following strategies were used to have an understandable, extensible and maintainable code:
 - The [**adapter**](./src/main/kotlin/com/dls/insuranceadvisorservice/adapter) layer is a gateway for a user or any program else to interact with the application. There's no domain logic here.
 - It's possible to create new [**rules**](./src/main/kotlin/com/dls/insuranceadvisorservice/domain/insurancelines/rules) easily, just by implementing the [**RiskScoreRule**](./src/main/kotlin/com/dls/insuranceadvisorservice/domain/insurancelines/RiskScoreRule.kt) interface. After that, it can be used in [**any line of insurance**](./src/main/kotlin/com/dls/insuranceadvisorservice/domain/insurancelines).
-- It's possible to create new lines of insurance risk score calculator easily, just by implementing the [**LineOfInsuranceRiskScoreCalculator**](./src/main/kotlin/com/dls/insuranceadvisorservice/domain/usecase/LineOfInsuranceRiskScoreCalculator.kt) interface. After that, you need to add the newline in the [**use case orchestration**](./src/main/kotlin/com/dls/insuranceadvisorservice/domain/usecase/RiskScoreProcessorUseCaseImpl.kt).
+- It's possible to create new lines of insurance risk score calculator easily, just by implementing the [**InsuranceLineRiskScoreCalculator**](./src/main/kotlin/com/dls/insuranceadvisorservice/domain/usecase/InsuranceLineRiskScoreCalculator.kt) interface. After that, you need to add the newline in the [**use case orchestration**](./src/main/kotlin/com/dls/insuranceadvisorservice/domain/usecase/RiskScoreProcessorUseCaseImpl.kt).
 
 ![Diagram](./insurance-advisor-service.png)
 
