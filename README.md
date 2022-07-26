@@ -1,5 +1,5 @@
 # insurance-advisor-service
-Service responsible for generating a customized insurance profile for users' specific needs according to their entries
+Service responsible for generating a customized insurance profile for users' specific needs according to their entries.
 
 ## Main Architectural Components
 
