@@ -14,14 +14,12 @@ data class UserRiskProfile(
     val vehicle: Vehicle?
 ){
 
-    data class Vehicle(@field:Positive val year: Int)
+    data class Vehicle(val year: Int)
 
     enum class MaritalStatus { single,married }
 
     enum class OwnershipStatus {owned,mortgaged}
 
-
-    @JsonNaming(PropertyNamingStrategies.SnakeCaseStrategy::class)
     data class House(val ownershipStatus: OwnershipStatus)
 
 }
