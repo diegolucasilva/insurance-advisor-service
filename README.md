@@ -1,5 +1,5 @@
 # insurance-advisor-service
-Service responsible for generating a customized insurance profile for users' specific needs according to their entries
+Service responsible for generating a customized insurance profile for users' specific needs according to their entries.
 
 ## Main Architectural Components
 
@@ -7,7 +7,7 @@ Service responsible for generating a customized insurance profile for users' spe
 - [**UseCase**](./src/main/kotlin/com/dls/insuranceadvisorservice/domain/usecase): This use case provide an implementation for accessing the domain logic responsible to calculate a risk profile for each line of insurance.
 - [**InsuranceLines**](./src/main/kotlin/com/dls/insuranceadvisorservice/domain/insurancelines): Responsible to calculate a risk profile for each line of insurance.
 - [**Rules**](./src/main/kotlin/com/dls/insuranceadvisorservice/domain/insurancelines/rules): Contains all rules that can be used to calculate risk score.
-- [**Domain**](./src/main/kotlin/com/dls/insuranceadvisorservice/domain): The [**RiskProfileForInsuranceLine**](./src/main/kotlin/com/dls/insuranceadvisorservice/domain/RiskProfileForInsuranceLine.kt) contains both state and behavior of a risk profile for any line insurance and calculate a plan ("economic", "regular", "responsible") based on the risk score.
+- [**Domain**](./src/main/kotlin/com/dls/insuranceadvisorservice/domain): The [**RiskProfileForInsuranceLine**](./src/main/kotlin/com/dls/insuranceadvisorservice/domain/RiskProfileForInsuranceLine.kt) It's a risk profile for any line of insurance. It suggest a plan ("economical", "regular", "responsible") based on the user's risk score.
 
 ## Code Design Strategy
 The following strategies were used to have an understandable, extensible and maintainable code:
