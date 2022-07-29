@@ -26,6 +26,6 @@ class LifeInsuranceLineRiskScore: InsuranceLineRiskScoreCalculator {
             HighIncomeRule(),
             DependentsIncomeRule(),
             MarriedLifeRule(),
-          )
+            LowIncomeRule())
     }
 }

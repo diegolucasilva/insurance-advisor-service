@@ -23,6 +23,7 @@ class AutoInsuranceLineRiskScore: InsuranceLineRiskScoreCalculator {
             UnderThirtyAgeRule(),
             MiddleAgeRule(),
             HighIncomeRule(),
-            VehicleProductionDateRule())
+            VehicleProductionDateRule(),
+            LowIncomeRule())
     }
 }

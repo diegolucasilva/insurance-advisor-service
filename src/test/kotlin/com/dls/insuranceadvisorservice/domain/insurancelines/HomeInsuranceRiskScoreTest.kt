@@ -36,7 +36,7 @@ internal class HomeInsuranceRiskScoreTest {
         val userRiskProfile = UserRiskProfile(
             age=25,
             dependents=1,
-            income=10,
+            income=30000,
             maritalStatus = UserRiskProfile.MaritalStatus.single,
             house = UserRiskProfile.House(UserRiskProfile.OwnershipStatus.owned),
             questionScore = listOf(1,1,0),
@@ -57,7 +57,7 @@ internal class HomeInsuranceRiskScoreTest {
         val userRiskProfile = UserRiskProfile(
             age=25,
             dependents=0,
-            income=10,
+            income=30000,
             maritalStatus = UserRiskProfile.MaritalStatus.married,
             house = UserRiskProfile.House(UserRiskProfile.OwnershipStatus.mortgaged),
             questionScore = listOf(1,1,1),
@@ -89,5 +89,23 @@ internal class HomeInsuranceRiskScoreTest {
         //THEN
         assert(riskProfileLineInsurance.score ==userRiskProfile.questionScore.sum()-2)
         assert(riskProfileLineInsurance.insurancePlanStatus == RiskProfileForInsuranceLine.InsurancePlanStatus.REGULAR)
+    }
+
+    @Test
+    fun `Given a user with low income value, the auto insurance risk calculator should return the score status INELIGIBLE`() {
+        //GIVEN
+        val userRiskProfile = UserRiskProfile(
+            age=35,
+            dependents=1,
+            income=2300,
+            maritalStatus = UserRiskProfile.MaritalStatus.single,
+            house = UserRiskProfile.House(UserRiskProfile.OwnershipStatus.owned),
+            questionScore = listOf(1,1,1),
+            vehicle = UserRiskProfile.Vehicle(LocalDate.now().year-6)
+        )
+        //WHEN
+        val riskProfileLineInsurance = homeInsuranceRiskScore.execute(userRiskProfile)
+        //THEN
+        assert(riskProfileLineInsurance.insurancePlanStatus == RiskProfileForInsuranceLine.InsurancePlanStatus.INELIGIBLE)
     }
 }

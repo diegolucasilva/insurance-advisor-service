@@ -16,7 +16,7 @@ internal class LifeInsuranceRiskScoreTest {
         val userRiskProfile = UserRiskProfile(
             age=64,
             dependents=5,
-            income=0,
+            income=30000,
             maritalStatus = UserRiskProfile.MaritalStatus.married,
             house = null,
             questionScore = listOf(1,1,0),
@@ -36,7 +36,7 @@ internal class LifeInsuranceRiskScoreTest {
         val userRiskProfile = UserRiskProfile(
             age=25,
             dependents=1,
-            income=10,
+            income=30000,
             maritalStatus = UserRiskProfile.MaritalStatus.single,
             house = null,
             questionScore = listOf(1,1,0),
@@ -57,7 +57,7 @@ internal class LifeInsuranceRiskScoreTest {
         val userRiskProfile = UserRiskProfile(
             age=25,
             dependents=0,
-            income=10,
+            income=30000,
             maritalStatus = UserRiskProfile.MaritalStatus.married,
             house = UserRiskProfile.House(UserRiskProfile.OwnershipStatus.mortgaged),
             questionScore = listOf(1,1,1),
@@ -78,7 +78,7 @@ internal class LifeInsuranceRiskScoreTest {
         val userRiskProfile = UserRiskProfile(
             age=35,
             dependents=1,
-            income=10,
+            income=30000,
             maritalStatus = UserRiskProfile.MaritalStatus.single,
             house = null,
             questionScore = listOf(1,1,1),
@@ -112,5 +112,24 @@ internal class LifeInsuranceRiskScoreTest {
         //THEN
         assert(riskProfileLineInsurance.score ==userRiskProfile.questionScore.sum())
         assert(riskProfileLineInsurance.insurancePlanStatus == RiskProfileForInsuranceLine.InsurancePlanStatus.RESPONSIBLE)
+    }
+
+
+    @Test
+    fun `Given a user with low income value, the auto insurance risk calculator should return the score status INELIGIBLE`() {
+        //GIVEN
+        val userRiskProfile = UserRiskProfile(
+            age=35,
+            dependents=1,
+            income=3000,
+            maritalStatus = UserRiskProfile.MaritalStatus.married,
+            house = null,
+            questionScore = listOf(1,1,1),
+            vehicle = UserRiskProfile.Vehicle(LocalDate.now().year-4)
+        )
+        //WHEN
+        val riskProfileLineInsurance = lifeInsuranceRiskScore.execute(userRiskProfile)
+        //THEN
+        assert(riskProfileLineInsurance.insurancePlanStatus == RiskProfileForInsuranceLine.InsurancePlanStatus.INELIGIBLE)
     }
 }

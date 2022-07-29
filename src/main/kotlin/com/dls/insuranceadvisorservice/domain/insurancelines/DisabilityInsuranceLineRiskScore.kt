@@ -29,6 +29,6 @@ class DisabilityInsuranceLineRiskScore: InsuranceLineRiskScoreCalculator {
             DependentsIncomeRule(),
             MarriedDisabilityRule(),
             SecondRiskAnswerRule(),
-        )
+            LowIncomeRule())
     }
 }

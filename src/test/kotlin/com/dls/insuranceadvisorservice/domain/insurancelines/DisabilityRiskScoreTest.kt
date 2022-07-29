@@ -54,7 +54,7 @@ internal class DisabilityRiskScoreTest {
         val userRiskProfile = UserRiskProfile(
             age=25,
             dependents=1,
-            income=10,
+            income=30000,
             maritalStatus = UserRiskProfile.MaritalStatus.single,
             house = null,
             questionScore = listOf(1,0,1),
@@ -76,7 +76,7 @@ internal class DisabilityRiskScoreTest {
         val userRiskProfile = UserRiskProfile(
             age=25,
             dependents=0,
-            income=10,
+            income=30000,
             maritalStatus = UserRiskProfile.MaritalStatus.married,
             house = UserRiskProfile.House(UserRiskProfile.OwnershipStatus.mortgaged),
             questionScore = listOf(1,0,1),
@@ -98,7 +98,7 @@ internal class DisabilityRiskScoreTest {
         val userRiskProfile = UserRiskProfile(
             age=35,
             dependents=1,
-            income=10,
+            income=30000,
             maritalStatus = UserRiskProfile.MaritalStatus.single,
             house = null,
             questionScore = listOf(1,1,1),
@@ -132,5 +132,23 @@ internal class DisabilityRiskScoreTest {
         //THEN
         assert(riskProfileLineInsurance.score ==userRiskProfile.questionScore.sum())
         assert(riskProfileLineInsurance.insurancePlanStatus == RiskProfileForInsuranceLine.InsurancePlanStatus.RESPONSIBLE)
+    }
+
+    @Test
+    fun `Given a user with income under 25k$ the auto insurance risk calculator should return the score status INELIGIBLE`() {
+        //GIVEN
+        val userRiskProfile = UserRiskProfile(
+            age=25,
+            dependents=1,
+            income=3000,
+            maritalStatus = UserRiskProfile.MaritalStatus.single,
+            house = null,
+            questionScore = listOf(1,0,1),
+            vehicle = UserRiskProfile.Vehicle(LocalDate.now().year)
+        )
+        //WHEN
+        val riskProfileLineInsurance = disabilityInsuranceRiskScore.execute(userRiskProfile)
+        //THEN
+        assert(riskProfileLineInsurance.insurancePlanStatus == RiskProfileForInsuranceLine.InsurancePlanStatus.INELIGIBLE)
     }
 }

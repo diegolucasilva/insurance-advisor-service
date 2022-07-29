@@ -25,6 +25,7 @@ class HomeInsuranceLineRiskScore: InsuranceLineRiskScoreCalculator {
             MiddleAgeRule(),
             HighIncomeRule(),
             HouseMortgagedRule(),
-          )
+            LowIncomeRule())
+
     }
 }

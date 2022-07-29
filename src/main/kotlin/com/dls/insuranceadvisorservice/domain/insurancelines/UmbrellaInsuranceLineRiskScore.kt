@@ -23,6 +23,7 @@ class UmbrellaInsuranceLineRiskScore: InsuranceLineRiskScoreCalculator {
         return listOf(
             UnderThirtyAgeRule(),
             MiddleAgeRule(),
-            HighIncomeRule())
+            HighIncomeRule(),
+            LowIncomeRule())
     }
 }

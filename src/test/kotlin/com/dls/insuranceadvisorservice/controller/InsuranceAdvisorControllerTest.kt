@@ -28,10 +28,10 @@ internal class InsuranceAdvisorControllerTest {
         val userPersonalInformationRequest = UserPersonalInformationRequest(
             age=35,
             dependents=2,
-            income=0,
+            income=30000,
             maritalStatus = UserRiskProfile.MaritalStatus.married,
             house = UserPersonalInformationRequest.HouseRequest(UserRiskProfile.OwnershipStatus.owned),
-            riskQuestions = listOf(0,1,0),
+            riskQuestions = listOf(0,0,1),
             vehicle = UserPersonalInformationRequest.VehicleRequest(2018)
         )
         //WHEN
@@ -41,7 +41,7 @@ internal class InsuranceAdvisorControllerTest {
         Assertions.assertEquals(response?.statusCode, HttpStatus.CREATED)
         Assertions.assertNotNull(response)
         Assertions.assertEquals(response?.body?.auto, "regular")
-        Assertions.assertEquals(response?.body?.disability, "ineligible")
+        Assertions.assertEquals(response?.body?.disability, "economic")
         Assertions.assertEquals(response?.body?.home, "economic")
         Assertions.assertEquals(response?.body?.life, "regular")
         Assertions.assertEquals(response?.body?.umbrella, "economic")
@@ -72,6 +72,31 @@ internal class InsuranceAdvisorControllerTest {
         Assertions.assertEquals(response?.body?.home, "regular")
         Assertions.assertEquals(response?.body?.life, "ineligible")
         Assertions.assertEquals(response?.body?.umbrella, "regular")
+    }
+
+    @Test
+    fun `Given a user with the following attributes, the risk score result must be ineligible for all lines of insurance`() {
+        //GIVEN
+        val userPersonalInformationRequest = UserPersonalInformationRequest(
+            age=83,
+            dependents=2,
+            income=3000,
+            maritalStatus = UserRiskProfile.MaritalStatus.married,
+            house = UserPersonalInformationRequest.HouseRequest(UserRiskProfile.OwnershipStatus.owned),
+            riskQuestions = listOf(1,1,1),
+            vehicle = UserPersonalInformationRequest.VehicleRequest(2018)
+        )
+        //WHEN
+        val response = whenRequestIsMade(HttpEntity<UserPersonalInformationRequest>(userPersonalInformationRequest, HttpHeaders()))
+
+        //THEN
+        Assertions.assertEquals(response?.statusCode, HttpStatus.CREATED)
+        Assertions.assertNotNull(response)
+        Assertions.assertEquals(response?.body?.auto, "ineligible")
+        Assertions.assertEquals(response?.body?.disability, "ineligible")
+        Assertions.assertEquals(response?.body?.home, "ineligible")
+        Assertions.assertEquals(response?.body?.life, "ineligible")
+        Assertions.assertEquals(response?.body?.umbrella, "ineligible")
 
     }
 

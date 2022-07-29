@@ -18,7 +18,7 @@ internal class UmbrellaInsuranceRiskScoreTest {
         val userRiskProfile = UserRiskProfile(
             age=25,
             dependents=1,
-            income=10,
+            income=30000,
             maritalStatus = UserRiskProfile.MaritalStatus.married,
             house = null,
             questionScore = listOf(1,1,1),
@@ -50,5 +50,23 @@ internal class UmbrellaInsuranceRiskScoreTest {
         //THEN
         assert(riskProfileLineInsurance.score ==userRiskProfile.questionScore.sum()-2)
         assert(riskProfileLineInsurance.insurancePlanStatus == RiskProfileForInsuranceLine.InsurancePlanStatus.REGULAR)
+    }
+
+    @Test
+    fun `Given a user with low income value, the auto insurance risk calculator should return the score status INELIGIBLE`() {
+        //GIVEN
+        val userRiskProfile = UserRiskProfile(
+            age=35,
+            dependents=1,
+            income=3000,
+            maritalStatus = UserRiskProfile.MaritalStatus.married,
+            house = null,
+            questionScore = listOf(1,1,1),
+            vehicle = UserRiskProfile.Vehicle(LocalDate.now().year-4)
+        )
+        //WHEN
+        val riskProfileLineInsurance = umbrellaInsuranceRiskScore.execute(userRiskProfile)
+        //THEN
+        assert(riskProfileLineInsurance.insurancePlanStatus == RiskProfileForInsuranceLine.InsurancePlanStatus.INELIGIBLE)
     }
 }
