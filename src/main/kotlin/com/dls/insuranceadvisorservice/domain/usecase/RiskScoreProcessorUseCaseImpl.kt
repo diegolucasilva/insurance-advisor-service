@@ -1,12 +1,9 @@
 package com.dls.insuranceadvisorservice.domain.usecase
 
 import com.dls.insuranceadvisorservice.adapter.port.RiskScoreProcessorUseCase
-import com.dls.insuranceadvisorservice.domain.insurancelines.AutoInsuranceLineRiskScore
 import com.dls.insuranceadvisorservice.domain.RiskProfileForInsuranceLine
 import com.dls.insuranceadvisorservice.domain.UserRiskProfile
-import com.dls.insuranceadvisorservice.domain.insurancelines.DisabilityInsuranceLineRiskScore
-import com.dls.insuranceadvisorservice.domain.insurancelines.HomeInsuranceLineRiskScore
-import com.dls.insuranceadvisorservice.domain.insurancelines.LifeInsuranceLineRiskScore
+import com.dls.insuranceadvisorservice.domain.insurancelines.*
 
 import org.springframework.stereotype.Service
 
@@ -24,6 +21,8 @@ class RiskScoreProcessorUseCaseImpl: RiskScoreProcessorUseCase {
             AutoInsuranceLineRiskScore(),
             DisabilityInsuranceLineRiskScore(),
             HomeInsuranceLineRiskScore(),
-            LifeInsuranceLineRiskScore())
+            LifeInsuranceLineRiskScore(),
+            UmbrellaInsuranceLineRiskScore()
+        )
     }
 }

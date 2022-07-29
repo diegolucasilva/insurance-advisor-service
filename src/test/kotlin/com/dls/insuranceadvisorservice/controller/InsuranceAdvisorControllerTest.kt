@@ -23,7 +23,7 @@ internal class InsuranceAdvisorControllerTest {
 
 
     @Test
-    fun `Given a user with the following attributes, the risk score result must be auto=regular, disability=ineligible, home=economic, life=regular`() {
+    fun `Given a user with the following attributes, the risk score result must be auto=regular, disability=ineligible, home=economic, life=regular, umbrella=economic`() {
         //GIVEN
         val userPersonalInformationRequest = UserPersonalInformationRequest(
             age=35,
@@ -44,16 +44,18 @@ internal class InsuranceAdvisorControllerTest {
         Assertions.assertEquals(response?.body?.disability, "ineligible")
         Assertions.assertEquals(response?.body?.home, "economic")
         Assertions.assertEquals(response?.body?.life, "regular")
+        Assertions.assertEquals(response?.body?.umbrella, "economic")
+
     }
 
 
     @Test
-    fun `Given a user with the following attributes, the risk score result must be auto=regular, disability=ineligible, home=economic, life=ineligible`() {
+    fun `Given a user with the following attributes, the risk score result must be auto=regular, disability=ineligible, home=economic, life=ineligible, umbrella=regular`() {
         //GIVEN
         val userPersonalInformationRequest = UserPersonalInformationRequest(
             age=83,
             dependents=2,
-            income=2000000,
+            income=2000001,
             maritalStatus = UserRiskProfile.MaritalStatus.married,
             house = UserPersonalInformationRequest.HouseRequest(UserRiskProfile.OwnershipStatus.owned),
             riskQuestions = listOf(1,1,1),
@@ -69,6 +71,8 @@ internal class InsuranceAdvisorControllerTest {
         Assertions.assertEquals(response?.body?.disability, "ineligible")
         Assertions.assertEquals(response?.body?.home, "regular")
         Assertions.assertEquals(response?.body?.life, "ineligible")
+        Assertions.assertEquals(response?.body?.umbrella, "regular")
+
     }
 
     @Test

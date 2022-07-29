@@ -14,4 +14,6 @@ class RiskProfileResponse(
     @field:Schema(description = "risk profile for home", example = "economic")
     val home: String,
     @field:Schema(description = "risk profile for life", example = "regular")
-    val life: String)
+    val life: String,
+    @field:Schema(description = "risk profile for umbrella", example = "regular")
+    val umbrella: String)

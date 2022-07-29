@@ -24,7 +24,7 @@ class RiskProfileForInsuranceLine(
             }
         }
     }
-    enum class Name { AUTO, DISABILITY, HOME, LIFE}
+    enum class Name { AUTO, DISABILITY, HOME, LIFE, UMBRELLA}
     enum class InsurancePlanStatus {REGULAR, INELIGIBLE, ECONOMIC, RESPONSIBLE}
 }
 

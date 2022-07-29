@@ -27,5 +27,6 @@ fun List<RiskProfileForInsuranceLine>.toResponse() = RiskProfileResponse(
         disability = this.first { it.name ==RiskProfileForInsuranceLine.Name.DISABILITY}.insurancePlanStatus?.name!!.lowercase(),
         home =  this.first { it.name ==RiskProfileForInsuranceLine.Name.HOME}.insurancePlanStatus?.name!!.lowercase(),
         life =this.first { it.name ==RiskProfileForInsuranceLine.Name.LIFE}.insurancePlanStatus?.name!!.lowercase(),
+        umbrella =this.first { it.name ==RiskProfileForInsuranceLine.Name.UMBRELLA}.insurancePlanStatus?.name!!.lowercase(),
         )
 
