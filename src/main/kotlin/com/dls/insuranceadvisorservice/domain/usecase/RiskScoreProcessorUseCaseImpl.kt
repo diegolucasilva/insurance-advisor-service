@@ -11,16 +11,22 @@ import org.springframework.stereotype.Service
 class RiskScoreProcessorUseCaseImpl: RiskScoreProcessorUseCase {
 
     override fun execute(userRiskProfile: UserRiskProfile): List<RiskProfileForInsuranceLine>{
-        return getLineRiskCalculators().map {
+        return getLineRiskCalculators(userRiskProfile).map {
             it.execute(userRiskProfile);
         }.toList()
     }
 
-    private fun getLineRiskCalculators():List<InsuranceLineRiskScoreCalculator>{
+    private fun getLineRiskCalculators(userRiskProfile: UserRiskProfile):List<InsuranceLineRiskScoreCalculator>{
+        var homeInsurance: InsuranceLineRiskScoreCalculator? = null
+        homeInsurance = if(userRiskProfile.house?.ownershipStatus== UserRiskProfile.OwnershipStatus.rented){
+            RenterInsuranceLineRiskScore()
+        }else
+            HomeInsuranceLineRiskScore()
+
         return listOf(
             AutoInsuranceLineRiskScore(),
             DisabilityInsuranceLineRiskScore(),
-            HomeInsuranceLineRiskScore(),
+            homeInsurance,
             LifeInsuranceLineRiskScore(),
             UmbrellaInsuranceLineRiskScore()
         )

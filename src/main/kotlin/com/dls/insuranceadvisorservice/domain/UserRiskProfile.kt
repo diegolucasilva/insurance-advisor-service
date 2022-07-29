@@ -14,7 +14,7 @@ data class UserRiskProfile(
 
     enum class MaritalStatus { single,married }
 
-    enum class OwnershipStatus {owned,mortgaged}
+    enum class OwnershipStatus {owned,mortgaged, rented}
 
     data class House(val ownershipStatus: OwnershipStatus)
 

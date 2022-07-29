@@ -75,6 +75,31 @@ internal class InsuranceAdvisorControllerTest {
     }
 
     @Test
+    fun `Given a user with the following attributes, the risk score result must be auto=regular, disability=ineligible, renter=economic, life=ineligible, umbrella=regular`() {
+        //GIVEN
+        val userPersonalInformationRequest = UserPersonalInformationRequest(
+            age=83,
+            dependents=2,
+            income=2000001,
+            maritalStatus = UserRiskProfile.MaritalStatus.married,
+            house = UserPersonalInformationRequest.HouseRequest(UserRiskProfile.OwnershipStatus.rented),
+            riskQuestions = listOf(1,1,1),
+            vehicle = UserPersonalInformationRequest.VehicleRequest(2018)
+        )
+        //WHEN
+        val response = whenRequestIsMade(HttpEntity<UserPersonalInformationRequest>(userPersonalInformationRequest, HttpHeaders()))
+
+        //THEN
+        Assertions.assertEquals(response?.statusCode, HttpStatus.CREATED)
+        Assertions.assertNotNull(response)
+        Assertions.assertEquals(response?.body?.auto, "responsible")
+        Assertions.assertEquals(response?.body?.disability, "ineligible")
+        Assertions.assertEquals(response?.body?.renter, "regular")
+        Assertions.assertEquals(response?.body?.life, "ineligible")
+        Assertions.assertEquals(response?.body?.umbrella, "regular")
+    }
+
+    @Test
     fun `Given a user with the following attributes, the risk score result must be ineligible for all lines of insurance`() {
         //GIVEN
         val userPersonalInformationRequest = UserPersonalInformationRequest(
