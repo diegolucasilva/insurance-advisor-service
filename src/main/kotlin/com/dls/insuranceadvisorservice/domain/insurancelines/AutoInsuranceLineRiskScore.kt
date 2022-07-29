@@ -9,7 +9,7 @@ class AutoInsuranceLineRiskScore: InsuranceLineRiskScoreCalculator {
 
     override fun execute(userRiskProfile: UserRiskProfile): RiskProfileForInsuranceLine {
         var riskProfileBaseLine = RiskProfileForInsuranceLine(
-            RiskProfileForInsuranceLine.Name.AUTO, userRiskProfile.questionScore)
+            RiskProfileForInsuranceLine.Name.AUTO, userRiskProfile.questionScore.sum())
         getRules().forEach {
             it.execute(userRiskProfile, riskProfileBaseLine);
         }

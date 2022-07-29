@@ -21,13 +21,13 @@ internal class UmbrellaInsuranceRiskScoreTest {
             income=10,
             maritalStatus = UserRiskProfile.MaritalStatus.married,
             house = null,
-            questionScore = 3,
+            questionScore = listOf(1,1,1),
             vehicle = UserRiskProfile.Vehicle(LocalDate.now().year)
         )
         //WHEN
         val riskProfileLineInsurance = umbrellaInsuranceRiskScore.execute(userRiskProfile)
         //THEN
-        assert(riskProfileLineInsurance.score ==userRiskProfile.questionScore-2)
+        assert(riskProfileLineInsurance.score ==userRiskProfile.questionScore.sum()-2)
         assert(riskProfileLineInsurance.insurancePlanStatus == RiskProfileForInsuranceLine.InsurancePlanStatus.REGULAR)
     }
 
@@ -42,13 +42,13 @@ internal class UmbrellaInsuranceRiskScoreTest {
             income=200001,
             maritalStatus = UserRiskProfile.MaritalStatus.married,
             house = null,
-            questionScore = 3,
+            questionScore = listOf(1,1,1),
             vehicle = UserRiskProfile.Vehicle(LocalDate.now().year-4)
         )
         //WHEN
         val riskProfileLineInsurance = umbrellaInsuranceRiskScore.execute(userRiskProfile)
         //THEN
-        assert(riskProfileLineInsurance.score ==userRiskProfile.questionScore-2)
+        assert(riskProfileLineInsurance.score ==userRiskProfile.questionScore.sum()-2)
         assert(riskProfileLineInsurance.insurancePlanStatus == RiskProfileForInsuranceLine.InsurancePlanStatus.REGULAR)
     }
 }

@@ -47,7 +47,7 @@ internal class VehicleProductionDateRuleTest {
             income=10,
             maritalStatus = UserRiskProfile.MaritalStatus.married,
             house = null,
-            questionScore = 2,
+            questionScore = listOf(1,1,0),
             vehicle = UserRiskProfile.Vehicle(year)
         )
 

@@ -9,7 +9,7 @@ fun UserPersonalInformationRequest.toDomain() = UserRiskProfile(
         dependents = dependents!!,
         income = income!!,
         maritalStatus = maritalStatus,
-        questionScore = riskQuestions.sum(),
+        questionScore = riskQuestions,
         house = (house?.toDomain()),
         vehicle = (vehicle?.toDomain())
     )

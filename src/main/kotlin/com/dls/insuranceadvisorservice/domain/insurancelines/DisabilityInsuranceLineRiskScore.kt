@@ -9,7 +9,7 @@ class DisabilityInsuranceLineRiskScore: InsuranceLineRiskScoreCalculator {
 
     override fun execute(userRiskProfile: UserRiskProfile): RiskProfileForInsuranceLine {
         var riskProfileBaseLine = RiskProfileForInsuranceLine(
-            RiskProfileForInsuranceLine.Name.DISABILITY, userRiskProfile.questionScore)
+            RiskProfileForInsuranceLine.Name.DISABILITY, userRiskProfile.questionScore.sum())
         getRules().forEach {
             it.execute(userRiskProfile, riskProfileBaseLine);
         }
@@ -28,6 +28,7 @@ class DisabilityInsuranceLineRiskScore: InsuranceLineRiskScoreCalculator {
             HouseMortgagedRule(),
             DependentsIncomeRule(),
             MarriedDisabilityRule(),
+            SecondRiskAnswerRule(),
         )
     }
 }

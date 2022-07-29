@@ -19,7 +19,7 @@ internal class LifeInsuranceRiskScoreTest {
             income=0,
             maritalStatus = UserRiskProfile.MaritalStatus.married,
             house = null,
-            questionScore = 2,
+            questionScore = listOf(1,1,0),
             vehicle = null
         )
         //WHEN
@@ -39,13 +39,13 @@ internal class LifeInsuranceRiskScoreTest {
             income=10,
             maritalStatus = UserRiskProfile.MaritalStatus.single,
             house = null,
-            questionScore = 2,
+            questionScore = listOf(1,1,0),
             vehicle = UserRiskProfile.Vehicle(LocalDate.now().year)
         )
         //WHEN
         val riskProfileLineInsurance = lifeInsuranceRiskScore.execute(userRiskProfile)
         //THEN
-        assert(riskProfileLineInsurance.score ==userRiskProfile.questionScore-1)
+        assert(riskProfileLineInsurance.score ==userRiskProfile.questionScore.sum()-1)
         assert(riskProfileLineInsurance.insurancePlanStatus == RiskProfileForInsuranceLine.InsurancePlanStatus.REGULAR)
     }
 
@@ -60,13 +60,13 @@ internal class LifeInsuranceRiskScoreTest {
             income=10,
             maritalStatus = UserRiskProfile.MaritalStatus.married,
             house = UserRiskProfile.House(UserRiskProfile.OwnershipStatus.mortgaged),
-            questionScore = 3,
+            questionScore = listOf(1,1,1),
             vehicle = UserRiskProfile.Vehicle(LocalDate.now().year-10)
         )
         //WHEN
         val riskProfileLineInsurance = lifeInsuranceRiskScore.execute(userRiskProfile)
         //THEN
-        assert(riskProfileLineInsurance.score ==userRiskProfile.questionScore-1)
+        assert(riskProfileLineInsurance.score ==userRiskProfile.questionScore.sum()-1)
         assert(riskProfileLineInsurance.insurancePlanStatus == RiskProfileForInsuranceLine.InsurancePlanStatus.REGULAR)
     }
 
@@ -81,13 +81,13 @@ internal class LifeInsuranceRiskScoreTest {
             income=10,
             maritalStatus = UserRiskProfile.MaritalStatus.single,
             house = null,
-            questionScore = 3,
+            questionScore = listOf(1,1,1),
             vehicle = UserRiskProfile.Vehicle(LocalDate.now().year-6)
         )
         //WHEN
         val riskProfileLineInsurance = lifeInsuranceRiskScore.execute(userRiskProfile)
         //THEN
-        assert(riskProfileLineInsurance.score ==userRiskProfile.questionScore)
+        assert(riskProfileLineInsurance.score ==userRiskProfile.questionScore.sum())
         assert(riskProfileLineInsurance.insurancePlanStatus == RiskProfileForInsuranceLine.InsurancePlanStatus.RESPONSIBLE)
     }
 
@@ -104,13 +104,13 @@ internal class LifeInsuranceRiskScoreTest {
             income=200001,
             maritalStatus = UserRiskProfile.MaritalStatus.married,
             house = null,
-            questionScore = 5,
+            questionScore = listOf(1,1,1),
             vehicle = UserRiskProfile.Vehicle(LocalDate.now().year-4)
         )
         //WHEN
         val riskProfileLineInsurance = lifeInsuranceRiskScore.execute(userRiskProfile)
         //THEN
-        assert(riskProfileLineInsurance.score ==userRiskProfile.questionScore)
+        assert(riskProfileLineInsurance.score ==userRiskProfile.questionScore.sum())
         assert(riskProfileLineInsurance.insurancePlanStatus == RiskProfileForInsuranceLine.InsurancePlanStatus.RESPONSIBLE)
     }
 }

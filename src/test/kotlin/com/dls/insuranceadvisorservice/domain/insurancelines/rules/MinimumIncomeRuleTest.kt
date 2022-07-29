@@ -47,7 +47,7 @@ internal class MinimumIncomeRuleTest {
             income=income,
             maritalStatus = UserRiskProfile.MaritalStatus.married,
             house = null,
-            questionScore = 2,
+            questionScore = listOf(1,1,0),
             vehicle = null
         )
 

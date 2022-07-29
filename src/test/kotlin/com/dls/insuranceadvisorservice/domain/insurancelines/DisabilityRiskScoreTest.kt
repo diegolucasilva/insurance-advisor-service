@@ -19,7 +19,7 @@ internal class DisabilityRiskScoreTest {
             income=0,
             maritalStatus = UserRiskProfile.MaritalStatus.married,
             house = null,
-            questionScore = 2,
+            questionScore = listOf(1,1,0),
             vehicle = null
         )
         //WHEN
@@ -37,7 +37,7 @@ internal class DisabilityRiskScoreTest {
             income=0,
             maritalStatus = UserRiskProfile.MaritalStatus.married,
             house = null,
-            questionScore = 2,
+            questionScore = listOf(1,1,0),
             vehicle = null
         )
         //WHEN
@@ -57,13 +57,13 @@ internal class DisabilityRiskScoreTest {
             income=10,
             maritalStatus = UserRiskProfile.MaritalStatus.single,
             house = null,
-            questionScore = 2,
+            questionScore = listOf(1,0,1),
             vehicle = UserRiskProfile.Vehicle(LocalDate.now().year)
         )
         //WHEN
         val riskProfileLineInsurance = disabilityInsuranceRiskScore.execute(userRiskProfile)
         //THEN
-        assert(riskProfileLineInsurance.score ==userRiskProfile.questionScore-1)
+        assert(riskProfileLineInsurance.score ==userRiskProfile.questionScore.sum()-1)
         assert(riskProfileLineInsurance.insurancePlanStatus == RiskProfileForInsuranceLine.InsurancePlanStatus.REGULAR)
     }
 
@@ -71,7 +71,7 @@ internal class DisabilityRiskScoreTest {
     //User is under 30 years old, deduct 2 risk points from all lines of insurance.
     //User's house is mortgaged, add 1 risk point
     //User is married, remove 1 risk point
-    fun `Given a user that is under 30, doesn't have dependents,house is mortgaged and is married, the auto insurance risk calculator should return the score status REGULAR and less 2 score point`() {
+    fun `Given a user that is under 30, doesn't have dependents,with the second anwer equals true, house is mortgaged and is married, the auto insurance risk calculator should return the score status ECONOMIC and less 2 score point`() {
         //GIVEN
         val userRiskProfile = UserRiskProfile(
             age=25,
@@ -79,19 +79,20 @@ internal class DisabilityRiskScoreTest {
             income=10,
             maritalStatus = UserRiskProfile.MaritalStatus.married,
             house = UserRiskProfile.House(UserRiskProfile.OwnershipStatus.mortgaged),
-            questionScore = 3,
+            questionScore = listOf(1,0,1),
             vehicle = UserRiskProfile.Vehicle(LocalDate.now().year-10)
         )
         //WHEN
         val riskProfileLineInsurance = disabilityInsuranceRiskScore.execute(userRiskProfile)
         //THEN
-        assert(riskProfileLineInsurance.score ==userRiskProfile.questionScore-2)
-        assert(riskProfileLineInsurance.insurancePlanStatus == RiskProfileForInsuranceLine.InsurancePlanStatus.REGULAR)
+        assert(riskProfileLineInsurance.score ==userRiskProfile.questionScore.sum()-2)
+        assert(riskProfileLineInsurance.insurancePlanStatus == RiskProfileForInsuranceLine.InsurancePlanStatus.ECONOMIC)
     }
 
     @Test
     //The user is between 30 and 40 years old, deduct 1.
     //The user has dependents, add 1 risk point to both the disability and life scores.
+    //The use has second answer equals true, add 2 points
     fun `Given a user that is between 30 and 40 years old and has a dependencies, the auto insurance risk calculator should return the score status RESPONSIBLE`() {
         //GIVEN
         val userRiskProfile = UserRiskProfile(
@@ -100,13 +101,13 @@ internal class DisabilityRiskScoreTest {
             income=10,
             maritalStatus = UserRiskProfile.MaritalStatus.single,
             house = null,
-            questionScore = 3,
+            questionScore = listOf(1,1,1),
             vehicle = UserRiskProfile.Vehicle(LocalDate.now().year-6)
         )
         //WHEN
         val riskProfileLineInsurance = disabilityInsuranceRiskScore.execute(userRiskProfile)
         //THEN
-        assert(riskProfileLineInsurance.score ==userRiskProfile.questionScore)
+        assert(riskProfileLineInsurance.score ==userRiskProfile.questionScore.sum()+2)
         assert(riskProfileLineInsurance.insurancePlanStatus == RiskProfileForInsuranceLine.InsurancePlanStatus.RESPONSIBLE)
     }
 
@@ -123,13 +124,13 @@ internal class DisabilityRiskScoreTest {
             income=200001,
             maritalStatus = UserRiskProfile.MaritalStatus.married,
             house = null,
-            questionScore = 5,
+            questionScore = listOf(1,1,1),
             vehicle = UserRiskProfile.Vehicle(LocalDate.now().year-4)
         )
         //WHEN
         val riskProfileLineInsurance = disabilityInsuranceRiskScore.execute(userRiskProfile)
         //THEN
-        assert(riskProfileLineInsurance.score ==userRiskProfile.questionScore-2)
+        assert(riskProfileLineInsurance.score ==userRiskProfile.questionScore.sum())
         assert(riskProfileLineInsurance.insurancePlanStatus == RiskProfileForInsuranceLine.InsurancePlanStatus.RESPONSIBLE)
     }
 }

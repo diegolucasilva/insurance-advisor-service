@@ -44,7 +44,7 @@ internal class MarriedDisabilityRuleTest {
             income=10,
             maritalStatus = maritalStatus,
             house = null,
-            questionScore = 2,
+            questionScore = listOf(1,1,0),
             vehicle = null
         )
 

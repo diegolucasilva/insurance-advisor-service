@@ -6,7 +6,7 @@ data class UserRiskProfile(
     val income: Int,
     val maritalStatus: MaritalStatus,
     val house: House?,
-    val questionScore: Int,
+    val questionScore: List<Int>,
     val vehicle: Vehicle?
 ){
 
