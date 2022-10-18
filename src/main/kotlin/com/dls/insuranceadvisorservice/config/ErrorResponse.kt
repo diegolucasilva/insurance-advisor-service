@@ -1,4 +1,4 @@
-package com.dls.insuranceadvisorservice.adapter.config
+package com.dls.insuranceadvisorservice.config
 
 import com.fasterxml.jackson.annotation.JsonInclude
 import com.fasterxml.jackson.databind.PropertyNamingStrategies

@@ -1,6 +1,6 @@
-package com.dls.insuranceadvisorservice.adapter.dto
+package com.dls.insuranceadvisorservice.dto
 
-import com.dls.insuranceadvisorservice.adapter.validator.BooleanList
+import com.dls.insuranceadvisorservice.validator.BooleanList
 import com.dls.insuranceadvisorservice.domain.customer.House
 import com.dls.insuranceadvisorservice.domain.customer.Customer
 import com.fasterxml.jackson.databind.PropertyNamingStrategies

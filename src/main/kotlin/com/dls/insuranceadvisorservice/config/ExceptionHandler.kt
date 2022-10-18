@@ -1,4 +1,4 @@
-package com.dls.insuranceadvisorservice.adapter.config
+package com.dls.insuranceadvisorservice.config
 
 import org.slf4j.LoggerFactory
 import org.springframework.http.HttpStatus

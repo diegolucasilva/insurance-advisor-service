@@ -1,4 +1,4 @@
-package com.dls.insuranceadvisorservice.adapter.port
+package com.dls.insuranceadvisorservice.port
 
 import com.dls.insuranceadvisorservice.domain.riskprofile.RiskProfileForInsuranceLine
 import com.dls.insuranceadvisorservice.domain.customer.Customer
