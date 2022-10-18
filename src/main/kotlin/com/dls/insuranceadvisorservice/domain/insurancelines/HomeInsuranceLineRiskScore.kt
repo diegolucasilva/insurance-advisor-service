@@ -8,8 +8,10 @@ import com.dls.insuranceadvisorservice.domain.insurancelines.rules.*
 class HomeInsuranceLineRiskScore: InsuranceLineRiskScoreCalculator {
 
     override fun execute(userRiskProfile: UserRiskProfile): RiskProfileForInsuranceLine {
+
         var riskProfileBaseLine = RiskProfileForInsuranceLine(
             RiskProfileForInsuranceLine.Name.HOME, userRiskProfile.questionScore.sum())
+
         getRules().forEach {
             it.execute(userRiskProfile, riskProfileBaseLine);
         }
@@ -26,6 +28,5 @@ class HomeInsuranceLineRiskScore: InsuranceLineRiskScoreCalculator {
             HighIncomeRule(),
             HouseMortgagedRule(),
             LowIncomeRule())
-
     }
 }
