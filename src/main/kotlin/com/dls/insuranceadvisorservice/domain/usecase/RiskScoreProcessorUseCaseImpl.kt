@@ -17,16 +17,10 @@ class RiskScoreProcessorUseCaseImpl: RiskScoreProcessorUseCase {
     }
 
     private fun getLineRiskCalculators(userRiskProfile: UserRiskProfile):List<InsuranceLineRiskScoreCalculator>{
-        var homeInsurance: InsuranceLineRiskScoreCalculator? = null
-        homeInsurance = if(userRiskProfile.house?.ownershipStatus== UserRiskProfile.OwnershipStatus.rented){
-            RenterInsuranceLineRiskScore()
-        }else
-            HomeInsuranceLineRiskScore()
-
         return listOf(
             AutoInsuranceLineRiskScore(),
             DisabilityInsuranceLineRiskScore(),
-            homeInsurance,
+            HomeInsuranceLineRiskScore(),
             LifeInsuranceLineRiskScore(),
             UmbrellaInsuranceLineRiskScore()
         )
