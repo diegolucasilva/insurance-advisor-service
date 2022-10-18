@@ -24,10 +24,7 @@ fun UserPersonalInformationRequest.VehicleRequest.toDomain() = UserRiskProfile.V
 
 fun List<RiskProfileForInsuranceLine>.toResponse() = RiskProfileResponse(
         auto = this.first { it.name ==RiskProfileForInsuranceLine.Name.AUTO }.insurancePlanStatus?.name!!.lowercase(),
-        disability = this.first { it.name ==RiskProfileForInsuranceLine.Name.DISABILITY}.insurancePlanStatus?.name!!.lowercase(),
         home =  this.firstOrNull { it.name ==RiskProfileForInsuranceLine.Name.HOME}?.insurancePlanStatus?.name?.lowercase(),
-        renter =  this.firstOrNull{ it.name ==RiskProfileForInsuranceLine.Name.RENTER}?.insurancePlanStatus?.name?.lowercase(),
         life =this.first { it.name ==RiskProfileForInsuranceLine.Name.LIFE}.insurancePlanStatus?.name!!.lowercase(),
-        umbrella =this.first { it.name ==RiskProfileForInsuranceLine.Name.UMBRELLA}.insurancePlanStatus?.name!!.lowercase(),
         )
 

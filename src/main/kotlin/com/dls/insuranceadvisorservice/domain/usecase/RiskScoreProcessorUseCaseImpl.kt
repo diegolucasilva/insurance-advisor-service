@@ -19,10 +19,8 @@ class RiskScoreProcessorUseCaseImpl: RiskScoreProcessorUseCase {
     private fun getLineRiskCalculators():List<InsuranceLineRiskScoreCalculator>{
         return listOf(
             AutoInsuranceLineRiskScore(),
-            DisabilityInsuranceLineRiskScore(),
             HomeInsuranceLineRiskScore(),
             LifeInsuranceLineRiskScore(),
-            UmbrellaInsuranceLineRiskScore()
         )
     }
 }

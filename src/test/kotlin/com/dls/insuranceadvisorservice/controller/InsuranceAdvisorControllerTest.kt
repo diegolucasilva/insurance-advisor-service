@@ -41,10 +41,8 @@ internal class InsuranceAdvisorControllerTest {
         Assertions.assertEquals(response?.statusCode, HttpStatus.CREATED)
         Assertions.assertNotNull(response)
         Assertions.assertEquals(response?.body?.auto, "regular")
-        Assertions.assertEquals(response?.body?.disability, "economic")
         Assertions.assertEquals(response?.body?.home, "economic")
         Assertions.assertEquals(response?.body?.life, "regular")
-        Assertions.assertEquals(response?.body?.umbrella, "economic")
 
     }
 
@@ -68,10 +66,8 @@ internal class InsuranceAdvisorControllerTest {
         Assertions.assertEquals(response?.statusCode, HttpStatus.CREATED)
         Assertions.assertNotNull(response)
         Assertions.assertEquals(response?.body?.auto, "responsible")
-        Assertions.assertEquals(response?.body?.disability, "ineligible")
         Assertions.assertEquals(response?.body?.home, "regular")
         Assertions.assertEquals(response?.body?.life, "ineligible")
-        Assertions.assertEquals(response?.body?.umbrella, "regular")
     }
 
     @Test
@@ -93,9 +89,7 @@ internal class InsuranceAdvisorControllerTest {
         Assertions.assertEquals(response?.statusCode, HttpStatus.CREATED)
         Assertions.assertNotNull(response)
         Assertions.assertEquals(response?.body?.auto, "responsible")
-        Assertions.assertEquals(response?.body?.disability, "ineligible")
         Assertions.assertEquals(response?.body?.life, "ineligible")
-        Assertions.assertEquals(response?.body?.umbrella, "regular")
     }
 
     @Test
@@ -117,10 +111,8 @@ internal class InsuranceAdvisorControllerTest {
         Assertions.assertEquals(response?.statusCode, HttpStatus.CREATED)
         Assertions.assertNotNull(response)
         Assertions.assertEquals(response?.body?.auto, "ineligible")
-        Assertions.assertEquals(response?.body?.disability, "ineligible")
         Assertions.assertEquals(response?.body?.home, "ineligible")
         Assertions.assertEquals(response?.body?.life, "ineligible")
-        Assertions.assertEquals(response?.body?.umbrella, "ineligible")
 
     }
 
