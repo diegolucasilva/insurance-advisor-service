@@ -1,9 +1,8 @@
 package com.dls.insuranceadvisorservice.domain.usecase
 
-import com.dls.insuranceadvisorservice.port.RiskScoreProcessorUseCase
+import com.dls.insuranceadvisorservice.domain.RiskScoreProcessorUseCase
 import com.dls.insuranceadvisorservice.domain.riskprofile.RiskProfileForInsuranceLine
 import com.dls.insuranceadvisorservice.domain.customer.Customer
-import com.dls.insuranceadvisorservice.domain.insurancelines.*
 
 import org.springframework.stereotype.Service
 import java.time.LocalDate

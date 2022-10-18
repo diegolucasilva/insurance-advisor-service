@@ -4,7 +4,7 @@ import com.dls.insuranceadvisorservice.dto.RiskProfileResponse
 import com.dls.insuranceadvisorservice.dto.UserPersonalInformationRequest
 import com.dls.insuranceadvisorservice.dto.toDomain
 import com.dls.insuranceadvisorservice.dto.toResponse
-import com.dls.insuranceadvisorservice.port.RiskScoreProcessorUseCase
+import com.dls.insuranceadvisorservice.domain.RiskScoreProcessorUseCase
 import io.swagger.v3.oas.annotations.Operation
 import io.swagger.v3.oas.annotations.responses.ApiResponse
 import io.swagger.v3.oas.annotations.responses.ApiResponses
