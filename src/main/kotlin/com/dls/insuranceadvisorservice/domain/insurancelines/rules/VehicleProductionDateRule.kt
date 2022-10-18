@@ -1,14 +1,14 @@
 package com.dls.insuranceadvisorservice.domain.insurancelines.rules
 
 import com.dls.insuranceadvisorservice.domain.insurancelines.RiskScoreRule
-import com.dls.insuranceadvisorservice.domain.RiskProfileForInsuranceLine
-import com.dls.insuranceadvisorservice.domain.UserRiskProfile
+import com.dls.insuranceadvisorservice.domain.riskprofile.RiskProfileForInsuranceLine
+import com.dls.insuranceadvisorservice.domain.customer.Customer
 import java.time.LocalDate
 
 class VehicleProductionDateRule: RiskScoreRule {
 
-     override fun execute(userRiskProfile: UserRiskProfile, riskProfileForInsuranceLine: RiskProfileForInsuranceLine){
-        if(wasProducedInTheLastFiveYear(userRiskProfile.vehicle?.year)){
+     override fun execute(customer: Customer, riskProfileForInsuranceLine: RiskProfileForInsuranceLine){
+        if(wasProducedInTheLastFiveYear(customer.vehicle?.year)){
             riskProfileForInsuranceLine.incrementScore()
         }
     }

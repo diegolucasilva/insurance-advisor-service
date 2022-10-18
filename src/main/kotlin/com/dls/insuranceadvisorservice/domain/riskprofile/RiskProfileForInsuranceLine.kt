@@ -1,4 +1,4 @@
-package com.dls.insuranceadvisorservice.domain
+package com.dls.insuranceadvisorservice.domain.riskprofile
 
 class RiskProfileForInsuranceLine(
     val name: Name,

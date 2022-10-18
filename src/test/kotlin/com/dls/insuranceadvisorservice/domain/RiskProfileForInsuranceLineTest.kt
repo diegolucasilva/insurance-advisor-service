@@ -1,5 +1,6 @@
 package com.dls.insuranceadvisorservice.domain;
 
+import com.dls.insuranceadvisorservice.domain.riskprofile.RiskProfileForInsuranceLine
 import org.junit.jupiter.api.Test
 
 

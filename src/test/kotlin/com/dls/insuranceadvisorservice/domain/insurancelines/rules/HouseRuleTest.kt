@@ -1,7 +1,8 @@
 package com.dls.insuranceadvisorservice.domain.insurancelines.rules;
 
-import com.dls.insuranceadvisorservice.domain.RiskProfileForInsuranceLine
-import com.dls.insuranceadvisorservice.domain.UserRiskProfile
+import com.dls.insuranceadvisorservice.domain.riskprofile.RiskProfileForInsuranceLine
+import com.dls.insuranceadvisorservice.domain.customer.House
+import com.dls.insuranceadvisorservice.domain.customer.Customer
 import org.junit.jupiter.api.Test
 
 
@@ -26,7 +27,7 @@ internal class HouseRuleTest {
     fun `Given a user with a house,this rule must keep the score`() {
         //GIVEN
         val actualScore = 2
-        val userRiskProfile = givenUserProfile(UserRiskProfile.House(UserRiskProfile.OwnershipStatus.mortgaged))
+        val userRiskProfile = givenUserProfile(House(House.OwnershipStatus.mortgaged))
         val riskProfileBaseLine = givenARiskProfileBaseLine(actualScore)
         //WHEN
         rule.execute(userRiskProfile,riskProfileBaseLine);
@@ -35,15 +36,15 @@ internal class HouseRuleTest {
 
     private fun givenARiskProfileBaseLine(actualScore: Int) =
         RiskProfileForInsuranceLine(
-            name=RiskProfileForInsuranceLine.Name.AUTO,
+            name= RiskProfileForInsuranceLine.Name.AUTO,
             score=actualScore)
 
-    private fun givenUserProfile(house: UserRiskProfile.House?=null) =
-        UserRiskProfile(
+    private fun givenUserProfile(house: House?=null) =
+        Customer(
             age=30,
             dependents=1,
             income=10,
-            maritalStatus = UserRiskProfile.MaritalStatus.married,
+            maritalStatus = Customer.MaritalStatus.married,
             house = house,
             questionScore = listOf(1,1,0),
             vehicle = null

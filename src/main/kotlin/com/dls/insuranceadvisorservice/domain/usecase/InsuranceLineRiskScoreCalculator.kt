@@ -1,12 +1,12 @@
 package com.dls.insuranceadvisorservice.domain.usecase
 
-import com.dls.insuranceadvisorservice.domain.RiskProfileForInsuranceLine
-import com.dls.insuranceadvisorservice.domain.UserRiskProfile
+import com.dls.insuranceadvisorservice.domain.riskprofile.RiskProfileForInsuranceLine
+import com.dls.insuranceadvisorservice.domain.customer.Customer
 import com.dls.insuranceadvisorservice.domain.insurancelines.RiskScoreRule
 
 interface InsuranceLineRiskScoreCalculator {
 
-    fun execute(userRiskProfile: UserRiskProfile): RiskProfileForInsuranceLine
+    fun execute(customer: Customer): RiskProfileForInsuranceLine
 
     fun getRules(): List<RiskScoreRule>
 

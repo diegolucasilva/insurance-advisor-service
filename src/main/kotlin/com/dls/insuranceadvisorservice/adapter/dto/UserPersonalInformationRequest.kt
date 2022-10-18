@@ -1,7 +1,8 @@
 package com.dls.insuranceadvisorservice.adapter.dto
 
 import com.dls.insuranceadvisorservice.adapter.validator.BooleanList
-import com.dls.insuranceadvisorservice.domain.UserRiskProfile
+import com.dls.insuranceadvisorservice.domain.customer.House
+import com.dls.insuranceadvisorservice.domain.customer.Customer
 import com.fasterxml.jackson.databind.PropertyNamingStrategies
 import com.fasterxml.jackson.databind.annotation.JsonNaming
 import io.swagger.v3.oas.annotations.media.Schema
@@ -26,7 +27,7 @@ data class UserPersonalInformationRequest(
     @field:PositiveOrZero
     @get:NotNull
     val income: Int?,
-    val maritalStatus: UserRiskProfile.MaritalStatus,
+    val maritalStatus: Customer.MaritalStatus,
     @field:BooleanList
     @field:Size(min = 3, max = 3)
     @field:NotNull
@@ -41,7 +42,7 @@ data class UserPersonalInformationRequest(
 
     @JsonNaming(PropertyNamingStrategies.SnakeCaseStrategy::class)
     data class HouseRequest(
-        val ownershipStatus: UserRiskProfile.OwnershipStatus
+        val ownershipStatus: House.OwnershipStatus
         )
 
 }

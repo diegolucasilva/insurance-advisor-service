@@ -1,6 +1,6 @@
-package com.dls.insuranceadvisorservice.domain
+package com.dls.insuranceadvisorservice.domain.customer
 
-data class UserRiskProfile(
+data class Customer(
     val age: Int,
     val dependents: Int,
     val income: Int,
@@ -9,13 +9,6 @@ data class UserRiskProfile(
     val questionScore: List<Int>,
     val vehicle: Vehicle?
 ){
-
-    data class Vehicle(val year: Int)
-
     enum class MaritalStatus { single,married }
-
-    enum class OwnershipStatus {owned,mortgaged, rented}
-
-    data class House(val ownershipStatus: OwnershipStatus)
 
 }

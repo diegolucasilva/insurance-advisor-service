@@ -1,7 +1,8 @@
 package com.dls.insuranceadvisorservice.domain.insurancelines.rules;
 
-import com.dls.insuranceadvisorservice.domain.RiskProfileForInsuranceLine
-import com.dls.insuranceadvisorservice.domain.UserRiskProfile
+import com.dls.insuranceadvisorservice.domain.riskprofile.RiskProfileForInsuranceLine
+import com.dls.insuranceadvisorservice.domain.customer.Customer
+import com.dls.insuranceadvisorservice.domain.customer.Vehicle
 import org.junit.jupiter.api.Test
 import java.time.LocalDate
 
@@ -37,18 +38,18 @@ internal class VehicleProductionDateRuleTest {
 
     private fun givenARiskProfileBaseLine(actualScore: Int) =
         RiskProfileForInsuranceLine(
-            name=RiskProfileForInsuranceLine.Name.AUTO,
+            name= RiskProfileForInsuranceLine.Name.AUTO,
             score=actualScore)
 
     private fun givenUserProfile(year: Int) =
-        UserRiskProfile(
+        Customer(
             age=30,
             dependents=1,
             income=10,
-            maritalStatus = UserRiskProfile.MaritalStatus.married,
+            maritalStatus = Customer.MaritalStatus.married,
             house = null,
             questionScore = listOf(1,1,0),
-            vehicle = UserRiskProfile.Vehicle(year)
+            vehicle = Vehicle(year)
         )
 
 

@@ -1,10 +1,10 @@
 package com.dls.insuranceadvisorservice.domain.insurancelines
 
-import com.dls.insuranceadvisorservice.domain.RiskProfileForInsuranceLine
-import com.dls.insuranceadvisorservice.domain.UserRiskProfile
+import com.dls.insuranceadvisorservice.domain.riskprofile.RiskProfileForInsuranceLine
+import com.dls.insuranceadvisorservice.domain.customer.Customer
 
 
 interface RiskScoreRule {
 
-    fun execute(userRiskProfile: UserRiskProfile, riskProfileForInsuranceLine: RiskProfileForInsuranceLine)
+    fun execute(customer: Customer, riskProfileForInsuranceLine: RiskProfileForInsuranceLine)
 }

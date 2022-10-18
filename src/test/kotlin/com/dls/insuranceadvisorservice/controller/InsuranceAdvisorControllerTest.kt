@@ -3,7 +3,8 @@ package com.dls.insuranceadvisorservice.controller;
 import com.dls.insuranceadvisorservice.adapter.config.ErrorResponse
 import com.dls.insuranceadvisorservice.adapter.dto.RiskProfileResponse
 import com.dls.insuranceadvisorservice.adapter.dto.UserPersonalInformationRequest
-import com.dls.insuranceadvisorservice.domain.UserRiskProfile
+import com.dls.insuranceadvisorservice.domain.customer.House
+import com.dls.insuranceadvisorservice.domain.customer.Customer
 import org.junit.jupiter.api.Assertions
 import org.junit.jupiter.api.Test
 import org.springframework.beans.factory.annotation.Autowired
@@ -29,8 +30,8 @@ internal class InsuranceAdvisorControllerTest {
             age=35,
             dependents=2,
             income=30000,
-            maritalStatus = UserRiskProfile.MaritalStatus.married,
-            house = UserPersonalInformationRequest.HouseRequest(UserRiskProfile.OwnershipStatus.owned),
+            maritalStatus = Customer.MaritalStatus.married,
+            house = UserPersonalInformationRequest.HouseRequest(House.OwnershipStatus.owned),
             riskQuestions = listOf(0,0,1),
             vehicle = UserPersonalInformationRequest.VehicleRequest(2018)
         )
@@ -54,8 +55,8 @@ internal class InsuranceAdvisorControllerTest {
             age=83,
             dependents=2,
             income=2000001,
-            maritalStatus = UserRiskProfile.MaritalStatus.married,
-            house = UserPersonalInformationRequest.HouseRequest(UserRiskProfile.OwnershipStatus.owned),
+            maritalStatus = Customer.MaritalStatus.married,
+            house = UserPersonalInformationRequest.HouseRequest(House.OwnershipStatus.owned),
             riskQuestions = listOf(1,1,1),
             vehicle = UserPersonalInformationRequest.VehicleRequest(2018)
         )
@@ -77,8 +78,8 @@ internal class InsuranceAdvisorControllerTest {
             age=83,
             dependents=2,
             income=2000001,
-            maritalStatus = UserRiskProfile.MaritalStatus.married,
-            house = UserPersonalInformationRequest.HouseRequest(UserRiskProfile.OwnershipStatus.rented),
+            maritalStatus = Customer.MaritalStatus.married,
+            house = UserPersonalInformationRequest.HouseRequest(House.OwnershipStatus.rented),
             riskQuestions = listOf(1,1,1),
             vehicle = UserPersonalInformationRequest.VehicleRequest(2018)
         )
@@ -99,8 +100,8 @@ internal class InsuranceAdvisorControllerTest {
             age=83,
             dependents=2,
             income=3000,
-            maritalStatus = UserRiskProfile.MaritalStatus.married,
-            house = UserPersonalInformationRequest.HouseRequest(UserRiskProfile.OwnershipStatus.owned),
+            maritalStatus = Customer.MaritalStatus.married,
+            house = UserPersonalInformationRequest.HouseRequest(House.OwnershipStatus.owned),
             riskQuestions = listOf(1,1,1),
             vehicle = UserPersonalInformationRequest.VehicleRequest(2018)
         )
@@ -123,8 +124,8 @@ internal class InsuranceAdvisorControllerTest {
             age=-1,
             dependents=2,
             income=-10,
-            maritalStatus = UserRiskProfile.MaritalStatus.married,
-            house = UserPersonalInformationRequest.HouseRequest(UserRiskProfile.OwnershipStatus.owned),
+            maritalStatus = Customer.MaritalStatus.married,
+            house = UserPersonalInformationRequest.HouseRequest(House.OwnershipStatus.owned),
             riskQuestions = listOf(1,1,1),
             vehicle = UserPersonalInformationRequest.VehicleRequest(2018)
         )

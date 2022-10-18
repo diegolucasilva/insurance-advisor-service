@@ -1,7 +1,8 @@
 package com.dls.insuranceadvisorservice.domain.insurancelines.rules;
 
-import com.dls.insuranceadvisorservice.domain.RiskProfileForInsuranceLine
-import com.dls.insuranceadvisorservice.domain.UserRiskProfile
+import com.dls.insuranceadvisorservice.domain.riskprofile.RiskProfileForInsuranceLine
+import com.dls.insuranceadvisorservice.domain.customer.House
+import com.dls.insuranceadvisorservice.domain.customer.Customer
 import org.junit.jupiter.api.Test
 
 
@@ -13,7 +14,7 @@ internal class HouseMortgagedRuleTest {
     fun `Given a user with house mortgaged, this rule must add 1 point to the risk score of a line insurance`() {
         //GIVEN
         val actualScore = 2
-        val userRiskProfile = givenUserProfile(UserRiskProfile.OwnershipStatus.mortgaged)
+        val userRiskProfile = givenUserProfile(House.OwnershipStatus.mortgaged)
         val riskProfileBaseLine = givenARiskProfileBaseLine(actualScore)
         //WHEN
         rule.execute(userRiskProfile,riskProfileBaseLine);
@@ -25,7 +26,7 @@ internal class HouseMortgagedRuleTest {
     fun `Given a user with house owned, this rule mustn't add 1 point to the risk score of a line insurance`() {
         //GIVEN
         val actualScore = 2
-        val userRiskProfile = givenUserProfile(UserRiskProfile.OwnershipStatus.owned)
+        val userRiskProfile = givenUserProfile(House.OwnershipStatus.owned)
         val riskProfileBaseLine = givenARiskProfileBaseLine(actualScore)
         //WHEN
         rule.execute(userRiskProfile,riskProfileBaseLine);
@@ -35,16 +36,16 @@ internal class HouseMortgagedRuleTest {
 
     private fun givenARiskProfileBaseLine(actualScore: Int) =
         RiskProfileForInsuranceLine(
-            name=RiskProfileForInsuranceLine.Name.AUTO,
+            name= RiskProfileForInsuranceLine.Name.AUTO,
             score=actualScore)
 
-    private fun givenUserProfile(houseOwnershipStatus: UserRiskProfile.OwnershipStatus) =
-        UserRiskProfile(
+    private fun givenUserProfile(houseOwnershipStatus: House.OwnershipStatus) =
+        Customer(
             age=30,
             dependents=1,
             income=10,
-            maritalStatus = UserRiskProfile.MaritalStatus.married,
-            house = UserRiskProfile.House(houseOwnershipStatus),
+            maritalStatus = Customer.MaritalStatus.married,
+            house = House(houseOwnershipStatus),
             questionScore = listOf(1,1,0),
             vehicle = null
         )
