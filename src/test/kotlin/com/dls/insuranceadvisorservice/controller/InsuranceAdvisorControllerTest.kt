@@ -94,7 +94,6 @@ internal class InsuranceAdvisorControllerTest {
         Assertions.assertNotNull(response)
         Assertions.assertEquals(response?.body?.auto, "responsible")
         Assertions.assertEquals(response?.body?.disability, "ineligible")
-        Assertions.assertEquals(response?.body?.renter, "regular")
         Assertions.assertEquals(response?.body?.life, "ineligible")
         Assertions.assertEquals(response?.body?.umbrella, "regular")
     }
